@@ -1,4 +1,4 @@
-package com.example.fhir_etl_test;
+package com.example.fhir_integration;
 
 import javax.servlet.http.HttpSession;
 

@@ -1,4 +1,4 @@
-package com.example.fhir_etl_test;
+package com.example.fhir_integration;
 
 import java.io.IOException;
 import java.util.stream.Collectors;
@@ -24,47 +24,55 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.fhir_integration.RouteBuilderTool.thisRouteBuilder;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 
 @RestController
-public class UseSourceController extends HttpServlet {
+public class SearchDbController extends HttpServlet {
     HttpSession session = null;
+    String useDB = "";
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         session = request.getSession();
     }
 
-    @PostMapping("/api/usesource")
-    public ResponseEntity<?> getConnectResultViaAjax(HttpServletRequest request, HttpServletResponse response,
-            @Validated @RequestBody String usesource, Errors errors)
+    @PostMapping("/api/searchdb")
+    // @GetMapping("/api/searchdb")
+    public ResponseEntity<?> getSearchResultViaAjax(HttpServletRequest request, HttpServletResponse response,
+            @Validated @RequestBody String dbdatas, Errors errors)
             throws Exception {
         doGet(request, response);
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode sourceObj = mapper.readTree(usesource);
-        String sourceName = sourceObj.findValue("usesource").asText();
-        String selectdataFloor = sourceObj.findValue("selectdata").asText();
         JsonNode data = new ObjectMapper().readTree("{}");
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode dbObj = mapper.readTree(dbdatas);
+        String sourceName = dbObj.findValue("source").asText();
+
         SetupDataSource setupDataSource = new SetupDataSource();
-        JsonNode useObj = setupDataSource.getSession_JsonNode(session,sourceName);
-        ObjectNode objectNode = (ObjectNode)useObj;
-        useObj = objectNode;
-        setupDataSource.setSession(useObj, session);
-        if (useObj.findValue("driver").asText().equals("sqlserver")) {
-            SQLServerDataSource dbSource = setupDataSource.setSQL(useObj);
+        JsonNode dataObj = setupDataSource.getSession_JsonNode(session,sourceName);
+        useDB = dbObj.findValue("selectdata").asText();
+        ObjectNode objectNode = (ObjectNode)dataObj;
+        objectNode.put("databasename", useDB);
+        dataObj = objectNode;
+        setupDataSource.setSession(dataObj, session);
+        if (dataObj.findValue("driver").asText().equals("sqlserver")) {
+            SQLServerDataSource dbSource = setupDataSource.setSQL(dataObj);
             DefaultRegistry reg = new DefaultRegistry();
             reg.bind("dbSource", dbSource);
             CamelContext context = new DefaultCamelContext(reg);
-            MyRouteBuilder build = new MyRouteBuilder();
+            RouteBuilderTool buildtool = new RouteBuilderTool();
+            buildtool.getSelectdataFloor("db");
+            buildtool.getUseDB(useDB);
+            thisRouteBuilder build = buildtool.thisRouteBuilder();
             context.addRoutes(build);
             context.start();
             Thread.sleep(5000);
             context.stop();
             context.close();
-            data = build.getDatabases();
+            data = buildtool.getDatabases();
         }
 
         if (errors.hasErrors()) {
@@ -84,7 +92,7 @@ public class UseSourceController extends HttpServlet {
         public void configure() throws Exception {
             from("timer://foo?repeatCount=1")
                     .setBody(constant(
-                            "SELECT name, database_id, create_date FROM sys.databases where database_id>4;"))
+                            "use " + useDB + ";SELECT DISTINCT TABLE_NAME AS 'name' FROM INFORMATION_SCHEMA.COLUMNS"))
                     .doTry()
                     .to("jdbc:dbSource")
                     // .split(body())

@@ -1,4 +1,4 @@
-package com.example.fhir_etl_test;
+package com.example.fhir_integration;
 
 import java.io.IOException;
 import java.util.stream.Collectors;
@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.fhir_etl_test.RouteBuilderTool.thisRouteBuilder;
+import com.example.fhir_integration.RouteBuilderTool.thisRouteBuilder;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;

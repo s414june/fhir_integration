@@ -1,4 +1,4 @@
-package com.example.fhir_etl_test;
+package com.example.fhir_integration;
 
 import java.io.IOException;
 import java.util.stream.Collectors;
@@ -22,26 +22,27 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.fhir_etl_test.RouteBuilderTool.thisRouteBuilder;
+import com.example.fhir_integration.RouteBuilderTool.thisRouteBuilder;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 
 @RestController
-public class SearchDbController extends HttpServlet {
+public class SearchTableController extends HttpServlet {
     HttpSession session = null;
-    String useDB = "";
+    String useTable = "";
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         session = request.getSession();
     }
 
-    @PostMapping("/api/searchdb")
-    // @GetMapping("/api/searchdb")
+    @PostMapping("/api/searchtable")
+    // @GetMapping("/api/searchtable")
     public ResponseEntity<?> getSearchResultViaAjax(HttpServletRequest request, HttpServletResponse response,
             @Validated @RequestBody String dbdatas, Errors errors)
             throws Exception {
@@ -53,19 +54,20 @@ public class SearchDbController extends HttpServlet {
 
         SetupDataSource setupDataSource = new SetupDataSource();
         JsonNode dataObj = setupDataSource.getSession_JsonNode(session,sourceName);
-        useDB = dbObj.findValue("selectdata").asText();
-        ObjectNode objectNode = (ObjectNode)dataObj;
+        useTable = dbObj.findValue("table").asText();
+        ObjectNode objectNode = (ObjectNode) dataObj;
+        String useDB = dbObj.findValue("db").asText();
         objectNode.put("databasename", useDB);
+        // objectNode.put("databasetable", useTable);
         dataObj = objectNode;
-        setupDataSource.setSession(dataObj, session);
         if (dataObj.findValue("driver").asText().equals("sqlserver")) {
             SQLServerDataSource dbSource = setupDataSource.setSQL(dataObj);
             DefaultRegistry reg = new DefaultRegistry();
             reg.bind("dbSource", dbSource);
             CamelContext context = new DefaultCamelContext(reg);
             RouteBuilderTool buildtool = new RouteBuilderTool();
-            buildtool.getSelectdataFloor("db");
-            buildtool.getUseDB(useDB);
+            buildtool.getSelectdataFloor("table");
+            buildtool.getUseTable(useTable);
             thisRouteBuilder build = buildtool.thisRouteBuilder();
             context.addRoutes(build);
             context.start();
@@ -90,9 +92,11 @@ public class SearchDbController extends HttpServlet {
         boolean hasErrors = false;
 
         public void configure() throws Exception {
+            String sqlStr = "";
+            sqlStr += "SELECT COLUMN_NAME,DATA_TYPE,IS_NULLABLE,NUMERIC_PRECISION,NUMERIC_SCALE";
+            sqlStr += " FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '" + useTable + "';";
             from("timer://foo?repeatCount=1")
-                    .setBody(constant(
-                            "use " + useDB + ";SELECT DISTINCT TABLE_NAME AS 'name' FROM INFORMATION_SCHEMA.COLUMNS"))
+                    .setBody(constant(sqlStr))
                     .doTry()
                     .to("jdbc:dbSource")
                     // .split(body())

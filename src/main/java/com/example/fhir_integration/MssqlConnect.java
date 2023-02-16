@@ -1,4 +1,4 @@
-package com.example.fhir_etl_test;
+package com.example.fhir_integration;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
