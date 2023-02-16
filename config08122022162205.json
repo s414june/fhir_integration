@@ -1,0 +1,32 @@
+{
+    "indatas": [
+        {
+            "name": "A",
+            "source": {
+                "driver": "sqlserver",
+                "servername": "SQLEXPRESS",
+                "username": "june",
+                "password": "0000",
+                "portnumber": "1433",
+                "databasename": "ESG_DB01"
+            },
+            "column": [
+                "SITE_ID",
+                "SITE_NM",
+                "TotalUsed",
+                "RecordHour",
+                "RecordTime",
+                "CREATE_DATE"
+            ]
+        }
+    ],
+    "outdatas": [],
+    "convert": [
+        {
+            "name": "A",
+            "column": "SITE_ID",
+            "converter": "incolumn",
+            "value": "A-TotalUsed"
+        }
+    ]
+}

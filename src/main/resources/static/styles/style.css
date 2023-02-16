@@ -1,0 +1,150 @@
+:root {
+  font-size: 14px;
+}
+
+button {
+  height: fit-content;
+}
+
+h3 {
+  font-size: 1rem !important;
+  min-height: 3rem;
+}
+
+.input-group {
+  width: fit-content;
+  position: relative;
+}
+
+.input-group p {
+  width: 100px !important;
+}
+
+.input-group .form-control,
+.input-group .form-select {
+  width: 250px;
+  max-width: 100%;
+}
+
+span.required {
+  color: red;
+}
+
+.connect-group small {
+  margin-left: 100px;
+}
+
+.loading-place {
+  display: flex;
+  position: fixed;
+  top: 50%;
+}
+
+.loading-left {
+  left: 25%;
+  transform: translate(-25%, -50%);
+}
+
+.loading-right {
+  left: 75%;
+  transform: translate(-75%, -50%);
+}
+
+th,
+td {
+  border: 1px solid gray;
+  padding: 5px;
+}
+
+.source-data-changer {
+  border: 1px solid white;
+  min-width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 0 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.source-outside {
+  max-height: calc(100vh - 3rem);
+  overflow-y: scroll;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(182, 182, 182);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(161, 161, 161);
+}
+#Toolbox {
+  position: relative;
+}
+
+#ToolType {
+  width: calc(52px + 0.5rem);
+}
+
+#ToolType button {
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+}
+
+#SourceMenu {
+  width: 400px;
+  position: relative;
+}
+#SourceMenu > div {
+  overflow-x: auto;
+  height: 100vh;
+  padding-top: 49px;
+}
+
+.jstree-anchor {
+  align-items: center;
+}
+
+.no_checkbox > i.jstree-checkbox {
+  display: none;
+}
+
+#main {
+  overflow: auto;
+  height: 100vh;
+  flex-grow: 1;
+}
+
+.sources-title * {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.fa-square-plus,
+.fa-file-export {
+  transition: 0.2s;
+}
+
+.fa-square-plus:hover,
+.fa-file-export:hover {
+  filter: brightness(1.2);
+  font-size: 1.2em;
+  transition: 0.2s;
+}

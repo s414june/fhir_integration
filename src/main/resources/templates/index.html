@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="zh-tw" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FHIR ETL TOOL</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/system/styles/bootstrap.min.css}" />
+    <script type="text/javascript" th:src="@{/system/scripts/vue.global.js}"></script>
+    <script type="text/javascript" th:src="@{/system/scripts/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/system/scripts/jquery-3.6.0.min.js}"></script>
+    <script type="text/javascript" th:src="@{/system/scripts/jq-add.js}"></script>
+    <script type="text/javascript" th:src="@{/package/font-awesome/js/all.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/package/font-awesome/css/all.min.css}">
+    </link>
+    <link rel="stylesheet" th:href="@{/styles/style.css}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+    </link>
+</head>
+
+<body>
+    <div class="d-flex w-100 m-0" id="app">
+        <div id="Toolbox" class="d-flex vh-100">
+            <div id="ToolType" class="bg-dark text-white p-1">
+                <button class="btn btn-dark text-center" @click="toolshow=!toolshow">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <button class="btn btn-dark text-center" :class="{'border-white':(tool=='in')}"
+                    @click="changeTool('in')">IN</button>
+                <button class="btn btn-dark text-center" :class="{'border-white':(tool=='out')}"
+                    @click="changeTool('out')">OUT</button>
+            </div>
+            <div id="SourceMenu" v-show="toolshow" class="shadow">
+                <div v-show="(tool=='in')">
+                    <nav class="navbar bg-light position-absolute w-100" style="top: 0;">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">輸入資料</a>
+                            <div class="d-flex">
+                                <button class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#sourceModal">連線</button>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="p-2">
+                        <div id="in_Jstree"></div>
+                    </div>
+                </div>
+                <div v-show="(tool=='out')">
+                    <nav class="navbar bg-light position-absolute w-100" style="top: 0;">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">輸出資料</a>
+                            <button class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#sourceModal">連線</button>
+                        </div>
+                    </nav>
+                    <div class="p-2">
+                        <div id="out_Jstree"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main">
+            <div class="row m-0">
+                <div class="col-12 px-0">
+                    <div
+                        class="bg-dark text-white px-3 d-flex justify-content-between align-items-center sources-title w-100">
+                        <h3 class="m-0 d-flex align-items-center">轉換設定</h3>
+                        <div class="me-2 d-flex align-items-center">
+                            <a class="source-data-changer px-2 btn bg-primary text-white" onclick="doJson(this)"
+                                href="#">
+                                <small>產出設定檔</small>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="Sources" class="source-outside">
+                        <!-- <div id="Sources_0" class="source">
+                            <source-data></source-data>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="sourceModal" tabindex="-1" aria-labelledby="sourceModalLabel" aria-hidden="true">
+            <form class="modal-dialog modal-lg" id="ConnectdbForm" @submit.prevent="onSubmit_Source($event)">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h1 class="modal-title fs-5" id="sourceModalLabel">連線</h1>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex flex-wrap">
+                            <input type="text" name="source" value="0" class="d-none">
+                            <div class="connect-group my-2 me-2 w-100">
+                                <div class="d-flex align-items-center input-group">
+                                    <p class="m-0"><span class="required">*</span>自訂名稱：</p>
+                                    <input type="text" class="form-control" name="selfname"
+                                        :value="(tool=='in')?'連線系統'+in_length:'OUT_連線系統'+out_length" required
+                                        @input="changeSelfname">
+                                </div>
+                                <small>備註：<span class="text-success">此為唯一值</span></small>
+                            </div>
+                            <div class="connect-group my-2 me-2">
+                                <div class="d-flex align-items-center input-group">
+                                    <p class="m-0"><span class="required">*</span>資料來源：</p>
+                                    <select name="driver" class="form-select" required>
+                                        <option value="" selected disabled>請選擇</option>
+                                        <option value="sqlserver">SQL Server</option>
+                                        <option value="mysql" disabled>MySQL</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="connect-group my-2 me-2">
+                                <div class="d-flex align-items-center input-group">
+                                    <p class="m-0"><span class="required">*</span>伺服器名稱：</p>
+                                    <input type="text" class="form-control" name="servername" value="localhost\\SQLEXPRESS"
+                                        required>
+                                </div>
+                                <small>範例：<span class="text-success">localhost\\SQLEXPRESS</span></small>
+                            </div>
+                            <div class="connect-group my-2 me-2">
+                                <div class="d-flex align-items-center input-group">
+                                    <p class="m-0"><span class="required">*</span>使用者名稱：</p>
+                                    <input type="text" class="form-control" name="username" required>
+                                </div>
+                            </div>
+                            <div class="connect-group my-2 me-2">
+                                <div class="d-flex align-items-center input-group">
+                                    <p class="m-0"><span class="required">*</span>密碼：</p>
+                                    <input type="password" class="form-control" autocomplete="false" name="password"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="connect-group my-2 me-2">
+                                <div class="d-flex align-items-center input-group">
+                                    <p class="m-0"><span class="required">*</span>連接埠：</p>
+                                    <input type="text" class="form-control" name="portnumber" value="1433" required>
+                                </div>
+                                <small>範例：<span class="text-success">1433</span></small>
+                            </div>
+                            <div class="connect-group my-2 me-2">
+                                <div class="d-flex align-items-center input-group">
+                                    <p class="m-0">資料庫名稱：</p>
+                                    <input type="text" class="form-control" name="databasename">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary">連線</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- <input type="hidden" @click="onSubmit_Source()" id="onSubmit_Source_Trigger"> -->
+        <input type="hidden" @click="onSubmit_DB()" id="onSubmit_DB_Trigger">
+        <input type="hidden" @click="onSubmit_Table()" id="onSubmit_Table_Trigger">
+        <div class="loading-place flex-column align-items-center loading-left" v-show="isloadleft">
+            <img th:src="@{/images/loading.svg}" alt="loading">
+        </div>
+        <div class="loading-place flex-column align-items-center loading-right" v-show="isloadright">
+            <img th:src="@{/images/loading.svg}" alt="loading">
+        </div>
+    </div>
+</body>
+<script type="text/x-template" id="db-component">
+    <div class="px-3 pb-3">
+        <a class="btn btn-outline-primary me-2 my-2" style="height:fit-content;white-space: nowrap;" data-bs-toggle="collapse"  :href="'#collapse_' + sourceid" >
+            {{sourcetext}}
+        </a>
+        <div :id="'collapse_' + sourceid" class="collapse show accordion" v-for="(dbtext,dbindex) in Object.keys(dataObj[sourcename])">
+            <div>
+                <button class="mb-2 mt-0 ms-3 btn-primary btn" data-bs-toggle="collapse"
+                    :data-bs-target="'#collapse_DB_' + dbtext" aria-expanded="true"
+                    :aria-controls="'collapse_DB_' + dbtext"
+                >
+                {{dbtext}}
+                </button>
+            </div>
+            <div class="collapse show" :id="'collapse_DB_' + dbtext"  v-for="(tabletext,tindex) in Object.keys(dataObj[sourcename][dbtext])">
+                <div>
+                    <button class="mb-2 mt-0 ms-5 btn-primary btn" data-bs-toggle="collapse"
+                        :data-bs-target="'#collapse_Table_' + (tindex+dbindex)" aria-expanded="true"
+                        :aria-controls="'collapse_Table_' + (tindex+dbindex)" 
+                    >
+                    {{tabletext}}
+                    </button>
+                    <span class="text-primary">表{{(tindex+dbindex)}}</span>
+                </div>
+                <div class="collapse show" :id="'collapse_Table_' + (tindex+dbindex)">
+                    <div class="card card-body ms-5 mb-2">
+                        <form :id="'ChooseColumnForm_' + (tindex+dbindex)" class="d-flex flex-wrap">
+                            <table :id="'table_' + (tindex+dbindex)" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>資料行名稱</th>
+                                        <th>資料類型</th>
+                                        <th>允許NULL</th>
+                                        <th class="text-primary">對應輸入欄位</th>
+                                        <th class="text-primary">對應輸出欄位</th>
+                                        <th class="text-primary">排序</th>
+                                        <th class="text-primary">轉換參數</th>
+                                        <th class="text-primary">轉換對照</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="(v,i) in dataObj[sourcename][dbtext][tabletext]">
+                                        <td :data-column-index="i">{{v["COLUMN_NAME"]}}</td>
+                                        <td>{{v["DATA_TYPE"]}}</td>
+                                        <td>{{v["IS_NULLABLE"]}}</td>
+                                        <td class="in-data" :id="'InData_'+tabletext+'_'+(i+tindex)" >
+                                        </td>
+                                        <td class="out-data" :id="'OutData_'+tabletext+'_'+(i+tindex)" >
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" style="width:80px;" :name='"order-"+v["COLUMN_NAME"]'>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" style="width:80px;" :name='"parm-"+v["COLUMN_NAME"]' />
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#settingTransform" @click.prevent="addTransformData('col_'+(i+tindex))">設定</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+    <div class="modal fade" id="settingTransform" aria-labelledby="settingTransformLabel" aria-hidden="true">
+        <form class="modal-dialog modal-lg" id="settingTransformForm" @submit.prevent="">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h1 class="modal-title fs-5" id="settingTransformLabel">設定</h1>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex mb-2">
+                        <button class="btn btn-success" @click="addSettingdata()">+</button>
+                        <button class="btn btn-danger" @click="deleteSettingdata()">-</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>原始值</th>
+                                <th>轉換值</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(settingdata,index) in transformsetting[nowcolumn]">
+                                <td>
+                                    <input type="text" class="form-control" :value="settingdata.key" @change="changeSettingdata('key',$event,index)">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" :value="settingdata.value" @change="changeSettingdata('value',$event,index)">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#settingTransform">設定</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+</script>
+<script>
+    let thisJson = {
+        indatas: [],
+        outdatas: [],
+        convert: []
+    }
+
+    let indatas = [];
+    let outdatas = [];
+
+    let dataObj = {};
+
+    function getSourceData(datas, nowTool) {
+        let d = {
+            source: -1,
+            sourcetext: "",
+            // db: "",
+            // table: "",
+            // tableid: -1
+            nowcolumn: -1,
+            transformsetting: {
+
+            }
+        };
+        if (datas) {
+            d = datas;
+        }
+        let sourceData = {
+            template: "#db-component"
+            , props: {
+            },
+            data() {
+                return {
+                    sourceid: d.source,
+                    sourcename: nowTool + d.source,
+                    sourcetext: d.sourcetext,
+                    // dbtext: d.db,
+                    // tabletext: d.table,
+                    // tableid: d.tableid,
+                    dataObj: dataObj,
+                    nowcolumn: "",
+                    transformsetting: {
+
+                    }
+                }
+            },
+            mounted() {
+            },
+            methods: {
+                addTransformData(nowcolumn) {
+                    this.nowcolumn = nowcolumn;
+                    this.transformsetting[this.nowcolumn] = [
+                        {
+                            "key": "",
+                            "value": ""
+                        }
+                    ]
+                },
+                changeSettingdata(key, event, index) {
+                    this.transformsetting[this.nowcolumn][index][key] = event.target.value;
+                },
+                addSettingdata() {
+                    console.log(this.nowcolumn)
+                    this.transformsetting[this.nowcolumn].push({
+                        "key": "",
+                        "value": ""
+                    });
+                },
+                deleteSettingdata() {
+                    if (this.transformsetting[this.nowcolumn].length > 1) {
+                        this.transformsetting[this.nowcolumn] = this.transformsetting[this.nowcolumn].slice(0, -1);
+                    }
+                }
+            },
+            components: {
+                'in-data': getInData()
+            }
+        }
+        return sourceData;
+    }
+
+
+
+    const { createApp } = Vue
+
+    function refreshDatas(needRefreshDatas, datas) {
+        needRefreshDatas.push(datas);
+    }
+
+    function getDatasIndex(needRefreshDatas, sourceid) {
+        let index = -1;
+        $(needRefreshDatas).each((i, v) => {
+            if (v["name"] == sourceid) {
+                index = i;
+                return false;
+            }
+        })
+        return index;
+    }
+
+    function getInData(index, colName) {
+        let selectsourceName = "insource";
+        let selectcolumnName = "incolumn";
+        if (index != undefined) {
+            selectsourceName += "_" + index;
+            selectcolumnName += "_" + index;
+        }
+        let inData = {
+            template:
+                `
+    <div class="d-flex">
+        <select name="${selectsourceName}" id="${selectsourceName}" class="form-select" required @change="searchColumn">
+            <option value="">
+                無
+            </option>
+            <option v-for="(sourcedata,index) in indatas" :value="index">
+                表{{sourcedata.tableid}}
+            </option>
+        </select>
+        <select name="${selectcolumnName}-${colName}" id="${selectcolumnName}" class="form-select" required>
+            <option value="" disabled>請選擇</option>
+            <option :value="indatas[nowindex].tableid + '-' + col" v-for="(col,index) in indatas[nowindex].column" v-if="nowindex>=0">
+                {{col}}
+            </option>
+        </select>
+    </div>
+        `,
+            props: {
+            },
+            data() {
+                return {
+                    indatas: [
+                        //     {
+                        //     name: 'A',
+                        //     column: ['1', '2', '3']
+                        // }
+                    ]
+                    ,
+                    nowindex: -1
+                }
+            },
+            mounted() {
+                let thisDatas = [];
+                let nowindex = 0;
+                $(indatas).each((i, v) => {
+                    let thisD = {};
+                    thisD.tableid = v["tableid"];
+                    let thisC = [];
+                    $(v["column"]).each((i1, v1) => {
+                        if (nowindex > index)
+                            thisC.push(v1);
+                        nowindex++;
+                    })
+                    thisD.column = thisC;
+                    if (thisD.column.length > 0)
+                        thisDatas.push(thisD);
+                })
+                this.indatas = thisDatas;
+            },
+            methods: {
+                searchColumn(event) {
+                    let index = $(event.target).val();
+                    if (index !== "") {
+                        this.nowindex = index;
+                    }
+                    else {
+                        this.nowindex = -1
+                    }
+                }
+            }
+        }
+
+        return inData;
+    }
+
+    function getOutData(index, colName) {
+        let selectsourceName = "outsource";
+        let selectcolumnName = "outcolumn";
+        if (index != undefined) {
+            selectsourceName += "_" + index;
+            selectcolumnName += "_" + index;
+        }
+        let outData = {
+            template:
+                `
+        <div class="d-flex">
+            <select name="${selectsourceName}" id="${selectsourceName}" class="form-select" required @change="searchColumn">
+                <option value="">
+                    無
+                </option>
+                <option v-for="(sourcedata,index) in outdatas" :value="index">
+                    表{{sourcedata.tableid}}
+                </option>
+            </select>
+            <select name="${selectcolumnName}-${colName}" id="${selectcolumnName}" class="form-select" required>
+                <option value="" disabled>請選擇</option>
+                <option :value="outdatas[nowindex].name + '-' + col" v-for="(col,index) in outdatas[nowindex].column" v-if="nowindex>=0">
+                    {{col}}
+                </option>
+            </select>
+        </div>
+        `,
+            props: {
+            },
+            data() {
+                return {
+                    outdatas: [
+                    ]
+                    ,
+                    nowindex: -1
+                }
+            },
+            mounted() {
+                this.outdatas = outdatas;
+            },
+            methods: {
+                searchColumn(event) {
+                    let index = $(event.target).val();
+                    if (index !== "") {
+                        this.nowindex = index;
+                    }
+                    else {
+                        this.nowindex = -1
+                    }
+                }
+            }
+        }
+
+        return outData;
+    }
+
+    createApp({
+        components: {
+            'source-data': getSourceData(),
+        },
+        data() {
+            return {
+                tool: 'in',
+                toolshow: true,
+                in_length: 0,
+                out_length: 0,
+                isloadleft: false,
+                isloadright: false,
+                jstreedata: {
+                    in: {
+                        'core': {
+                            'check_callback': true,
+                            'data': [
+                                {
+                                    "id": "injson1", "parent": "#", "text": "尚未登入連線系統",
+                                }
+                            ]
+                        },
+                        "plugins": ["themes", "html_data", "sort", "ui", 'types']
+                    },
+                    out: {
+                        'core': {
+                            'check_callback': true,
+                            'data': [
+                                {
+                                    "id": "injson1", "parent": "#", "text": "尚未登入連線系統",
+                                }
+                            ]
+                        },
+                        "plugins": ["themes", "html_data", "sort", "ui", 'types']
+                    }
+                },
+                nodeid: "",
+                nowTree: "#" + this.tool + "_Jstree"
+            }
+        },
+        mounted() {
+            // let that = this;
+            $('#in_Jstree').jstree(this.jstreedata.in);
+            $('#out_Jstree').jstree(this.jstreedata.out);
+            // $("#in_Jstree,#out_Jstree").on("select_node.jstree", function (event, data) {
+            //     that.tool = (event.target.id.includes("in") ? "in" : "out");
+            //     let node = data.node;
+            //     let prejstreeSeletor = "#" + that.nodeid;
+            //     if (prejstreeSeletor != "#" + data.node.id)
+            //         that.nodeid = data.node.id;
+
+            //     that.toggleFileIcon(node, prejstreeSeletor);
+
+            // })
+        }
+        ,
+        methods: {
+            changeTool(thisTool) {
+                this.tool = thisTool;
+            },
+            onSubmit_Source(event) {
+                event.preventDefault();
+                this.isloadleft = true;
+                let source = $(event.target).find('[name="source"]').val();
+                let sourcetext = $(event.target).find('[name="selfname"]').val();
+                $(event.target).find(".btn-close").click();
+                let that = this;
+                let jstree = $('#' + that.tool + '_Jstree');
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json",
+                    url: "api/connectdb",
+                    data: JSON.stringify($(event.target).serializeObject()),
+                    cache: false,
+                    timeout: 600000,
+                    success: function (d) {
+                        let init = [{
+                            "id": that.tool + "json1",
+                            "parent": "#",
+                            "text": sourcetext,
+                            // "state": { "checkbox_disabled": true },
+                            "state": { "opened": true },
+                            "a_attr": {
+                                "class": "no_checkbox"
+                            },
+                            "data": {
+                                "type": "source",
+                                "source": source,
+                                "sourcetext": sourcetext
+                            }
+                        }];
+                        jstree.jstree(true).settings.core.data = init;
+                        jstree.jstree(true).refresh();
+                        jstree.bind("refresh.jstree", createChild);
+                        // createChild();
+                        // that.jstreedata[that.tool].core.data.push(root);
+                        function createChild() {
+                            let parent = that.tool + "json1"
+                            let data = JSON.parse(d);
+                            $(data).each((i, v) => {
+                                let node = {
+                                    "id": that.tool + "json" + (i + 2),
+                                    "parent": parent,
+                                    "text": v["name"] + `<i class="fa-solid fa-square-plus text-primary mx-1"
+                         onclick="$('#onSubmit_DB_Trigger').click()"></i>`,
+                                    "state": { "opened": true },
+                                    "data": {
+                                        "type": "db",
+                                        "db": v["name"],
+                                        "source": source,
+                                        "sourcetext": sourcetext,
+                                        "tool": that.tool
+                                    }
+                                };
+                                jstree.jstree().create_node(parent, node, "last", false, true);
+                            })
+                        }
+                        // jstree.unbind("refresh.jstree", createChild);
+                        that.isloadleft = false;
+                        dataObj[that.tool + source] = {};
+                    },
+                    error: function (e) {
+                        that.isloadleft = false;
+                        console.error(e);
+                        if (e.responseText)
+                            alert(e.responseText);
+                        else
+                            alert("錯誤");
+                        return false;
+                    }
+                });
+                return true;
+            },
+            onSubmit_DB() {
+                let jstree = $('#' + this.tool + '_Jstree');
+                let selectedId = jstree.jstree().get_selected();
+                let selectedNode = jstree.jstree().get_node($("#" + selectedId));
+                // let parent = jstree.jstree().get_parent(selectedNode);
+                if (!selectedNode.data.type === "db") return;
+                let db = selectedNode.data.db;
+                let source = selectedNode.data.source;
+                let sourcetext = selectedNode.data.sourcetext;
+                let ajaxdata = { selectdata: db, source: source };
+                this.isloadleft = true;
+                let that = this;
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json",
+                    url: "api/searchdb",
+                    data: JSON.stringify(ajaxdata),
+                    cache: false,
+                    timeout: 600000,
+                    success: function (d) {
+                        let data = JSON.parse(d);
+                        let idLength = jstree.jstree().get_json('#', { flat: true }).length;
+                        let nowId = idLength++;
+                        try {
+                            console.log(data);
+                            return
+                            createChild();
+                            function createChild() {
+                                $(data).each((i, v) => {
+                                    let node = {
+                                        "id": that.tool + "json" + nowId,
+                                        "parent": selectedId,
+                                        "text": v["name"],
+                                        "data": {
+                                            "type": "table",
+                                            "table": v["name"],
+                                            "db": db,
+                                            "source": source,
+                                            "sourcetext": sourcetext,
+                                            "tool": that.tool
+                                        }
+                                    };
+                                    nowId++;
+                                    jstree.jstree(true).create_node(selectedId, node, "last", false, true);
+                                    // return
+                                })
+                            }
+                            that.isloadleft = false;
+                        }
+                        catch (e) {
+                            console.error(e);
+                            that.isloadleft = false;
+                        }
+                    },
+                    error: function (e) {
+                        that.isloadleft = false;
+                        console.error(e);
+                        if (e.responseText)
+                            alert(e.responseText);
+                        else
+                            alert("錯誤");
+                    }
+                });
+            },
+            onSubmit_Table() {
+                let checkedNode = $('#' + this.tool + '_Jstree').jstree().get_node(this.nodeid);
+                let datas = checkedNode.data;
+                let sourceid = datas.source;
+                this.isloadleft = true;
+                let that = this;
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json",
+                    url: "api/searchtable",
+                    data: JSON.stringify(datas),
+                    cache: false,
+                    timeout: 600000,
+                    success: function (d) {
+                        datas["tableid"] = $(".table").length;
+                        if ($("#Source_" + sourceid).length == 0 && that.tool == "in") {
+                            let newid = "Source_" + datas.source;
+                            $("#Sources").append(`
+                        <div id="${newid}" class="source">
+                    </div>`);
+                        }
+                        if (!addTable(d, datas)) {
+                            return false;
+                        }
+                        if (that.tool == "in")
+                            addSource(datas);
+
+                        let needRefreshDatas = null;
+                        (that.tool == "out") ? (needRefreshDatas = outdatas) : (needRefreshDatas = indatas);
+                        needRefreshDatas.push(datas);
+                        // that.tabletext = $(event.target).serializeObject()["selectdata"];
+                        $(".in-data").each((i, v) => {
+                            let thisCssSelector_In = '#' + v.id;
+                            let colName = $(v).parent().children("[data-column-index]").text();
+                            let newInData_Vue = Vue.createApp(getInData(i, colName))
+                                .mount(thisCssSelector_In);
+                            $(thisCssSelector_In).html("").append(newInData_Vue.$el)
+                        })
+                        $(".out-data").each((i, v) => {
+                            let thisCssSelector_Out = '#' + v.id;
+                            let colName = $(v).parent().children("[data-column-index]").text();
+                            let newOutData_Vue = Vue.createApp(getOutData(i, colName))
+                                .mount(thisCssSelector_Out);
+                            $(thisCssSelector_Out).html("").append(newOutData_Vue.$el)
+                        })
+                        that.isloadleft = false;
+
+                        let nowJstree = $('#' + that.tool + '_Jstree').jstree()
+                        nowJstree.set_text(that.nodeid,
+                            datas.table + `<i class="fa-solid fa-trash-can text-danger mx-1"
+                 onclick="delete_Table('${that.nodeid}')"></i>`);
+                        $("#" + that.nodeid).data("isloaded", true);
+                        return true;
+                    },
+                    error: function (e) {
+                        that.isloadleft = false;
+                        console.error(e);
+                        if (e.responseText)
+                            alert(e.responseText);
+                        else
+                            alert("錯誤");
+                        return false;
+                    }
+                });
+            }, addSource(datas) {
+                let newid = "Source_" + datas.source;
+                let newInData_Vue = Vue.createApp(getSourceData(datas, this.tool))
+                    .mount("#" + newid);
+                $("#" + newid).html("").append(newInData_Vue.$el);
+            }, addTable(d, datas) {
+                let isAddedTable = true;
+                let col = [];
+                try {
+                    let data = JSON.parse(d);
+                    let appendHtml = "";
+                    $(data).each((i, v) => {
+                        col.push(v["COLUMN_NAME"]);
+                    })
+                    datas["column"] = col;
+                    dataObj[this.tool + datas.source][datas.db][datas.table] = data;
+                } catch (e) {
+                    console.error(e);
+                    if (e.responseText)
+                        alert(e.responseText);
+                    else
+                        alert("錯誤");
+                    isAddedTable = false;
+                }
+                return isAddedTable;
+            },
+            toggleFileIcon(node, prejstreeSeletor) {
+                let nowTree = $("#" + this.tool + "_Jstree").jstree();
+                if (node.data && node.data.type && node.data.type == "table") {
+                    if (prejstreeSeletor != "") {
+                        if (!$(prejstreeSeletor).data("isloaded")) {
+                            let preNode = nowTree.get_node(prejstreeSeletor);
+                            let preText = preNode.data.table;
+                            nowTree.set_text(prejstreeSeletor, preText);
+                        }
+                        if ($("#" + node.id).data("isloaded")) return;
+                    }
+                    $(nowTree).jstree().set_text("#" + node.id,
+                        node.data.table + `<i class="fa-solid fa-file-export text-primary mx-1"
+                 onclick="$('#onSubmit_Table_Trigger').click();"></i>`);
+                }
+            }
+        }
+    }).mount('#app')
+
+    function doJson(that) {
+        let convert = [];
+        $(".in-form").each((i, form) => {
+            let data = $(form).serializeObject();
+            let name = form.id.replace("ChooseColumnForm_", "");
+            Object.keys(data).forEach((key) => {
+                let converter = key.split("_")[0].split("-")[0];
+                if (data[key] != "" && converter != "insource") {
+                    let column = key.split("-").pop();
+                    convert.push({
+                        name: name,
+                        column: column,
+                        converter: converter,
+                        value: data[key]
+                    });
+                }
+            });
+        });
+        thisJson.indatas = indatas;
+        thisJson.outdatas = outdatas;
+        thisJson.convert = convert;
+        let jsonData = JSON.stringify(thisJson);
+        var blob = new Blob([jsonData], {
+            type: "application/json"
+        }),
+            url = window.URL.createObjectURL(blob);
+        $(that).attr('href', url).attr('download', "fhirconfig.json");
+    }
+</script>
+
+</html>
