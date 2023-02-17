@@ -118,8 +118,8 @@
                             <div class="connect-group my-2 me-2">
                                 <div class="d-flex align-items-center input-group">
                                     <p class="m-0"><span class="required">*</span>伺服器名稱：</p>
-                                    <input type="text" class="form-control" name="servername" value="localhost\\SQLEXPRESS"
-                                        required>
+                                    <input type="text" class="form-control" name="servername"
+                                        value="localhost\\SQLEXPRESS" required>
                                 </div>
                                 <small>範例：<span class="text-success">localhost\\SQLEXPRESS</span></small>
                             </div>
@@ -633,8 +633,9 @@
                     error: function (e) {
                         that.isloadleft = false;
                         console.error(e);
-                        if (e.responseText)
-                            alert(e.responseText);
+                        if (e.responseText) {
+                            throwErrorToFront(e.responseText);
+                        }
                         else
                             alert("錯誤");
                         return false;
@@ -699,8 +700,9 @@
                     error: function (e) {
                         that.isloadleft = false;
                         console.error(e);
-                        if (e.responseText)
-                            alert(e.responseText);
+                        if (e.responseText) {
+                            throwErrorToFront(e.responseText);
+                        }
                         else
                             alert("錯誤");
                     }
@@ -763,8 +765,9 @@
                     error: function (e) {
                         that.isloadleft = false;
                         console.error(e);
-                        if (e.responseText)
-                            alert(e.responseText);
+                        if (e.responseText) {
+                            throwErrorToFront(e.responseText);
+                        }
                         else
                             alert("錯誤");
                         return false;
@@ -788,8 +791,9 @@
                     dataObj[this.tool + datas.source][datas.db][datas.table] = data;
                 } catch (e) {
                     console.error(e);
-                    if (e.responseText)
-                        alert(e.responseText);
+                    if (e.responseText) {
+                        throwErrorToFront(e.responseText);
+                    }
                     else
                         alert("錯誤");
                     isAddedTable = false;
@@ -842,6 +846,20 @@
         }),
             url = window.URL.createObjectURL(blob);
         $(that).attr('href', url).attr('download', "fhirconfig.json");
+    }
+    function throwErrorToFront(errData) {
+        try {
+            let resJson = JSON.parse(errData);
+            let logMsg = resJson.logMsg;
+            let showMsg = resJson.showMsg;
+            console.error(logMsg);
+            alert(showMsg);
+        }
+        catch (e) {
+            console.error(errData);
+            console.error(e);
+            alert(errData);
+        }
     }
 </script>
 

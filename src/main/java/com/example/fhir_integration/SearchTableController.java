@@ -10,19 +10,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.camel.CamelContext;
-import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
-import org.apache.camel.model.dataformat.JsonLibrary;
 import org.apache.camel.support.DefaultRegistry;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
-import org.apache.camel.Exchange;
-import org.apache.camel.Processor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.fhir_integration.RouteBuilderTool.thisRouteBuilder;
@@ -53,7 +47,7 @@ public class SearchTableController extends HttpServlet {
         String sourceName = dbObj.findValue("source").asText();
 
         SetupDataSource setupDataSource = new SetupDataSource();
-        JsonNode dataObj = setupDataSource.getSession_JsonNode(session,sourceName);
+        JsonNode dataObj = setupDataSource.getSession_JsonNode(session, sourceName);
         useTable = dbObj.findValue("table").asText();
         ObjectNode objectNode = (ObjectNode) dataObj;
         String useDB = dbObj.findValue("db").asText();
@@ -85,52 +79,4 @@ public class SearchTableController extends HttpServlet {
 
         return ResponseEntity.ok(data.toString());
     }
-
-    class MyRouteBuilder extends RouteBuilder {
-        JsonNode database = null;
-        String errorMsg = "";
-        boolean hasErrors = false;
-
-        public void configure() throws Exception {
-            String sqlStr = "";
-            sqlStr += "SELECT COLUMN_NAME,DATA_TYPE,IS_NULLABLE,NUMERIC_PRECISION,NUMERIC_SCALE";
-            sqlStr += " FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '" + useTable + "';";
-            from("timer://foo?repeatCount=1")
-                    .setBody(constant(sqlStr))
-                    .doTry()
-                    .to("jdbc:dbSource")
-                    // .split(body())
-                    // .marshal().json(JsonLibrary.Jackson)
-                    .marshal().json(JsonLibrary.Jackson)
-                    .process(
-                            new Processor() {
-                                public void process(Exchange exchange) throws Exception {
-                                    database = exchange.getIn().getBody(JsonNode.class);
-                                }
-                            })
-                    .doCatch(Exception.class)
-                    // .log("error")
-                    .process(
-                            new Processor() {
-                                public void process(Exchange exchange) throws Exception {
-                                    hasErrors = true;
-                                }
-                            });
-        }
-
-        public JsonNode getDatabases() {
-            // List<String> databases = new ArrayList<String>();
-            // return databases;
-            return database;
-        }
-
-        public String getErrorMsg() {
-            return errorMsg;
-        }
-
-        public boolean hasErrors() {
-            return hasErrors;
-        }
-    }
-
 }

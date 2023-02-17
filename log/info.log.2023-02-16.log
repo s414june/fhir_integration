@@ -1,0 +1,550 @@
+2023-02-16 10:11:14,953 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 55 - Starting FhirEtlApplication using Java 17.0.5 on June4693-450G7 with PID 30820 (C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration\target\classes started by June.Wu in C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration)
+2023-02-16 10:11:14,957 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 631 - No active profile set, falling back to 1 default profile: "default"
+2023-02-16 10:11:15,014 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls 255 - The Class-Path manifest attribute in C:\Users\june.wu\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/C:/Users/june.wu/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2023-02-16 10:11:15,015 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-16 10:11:15,015 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-16 10:11:16,990 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 108 - Tomcat initialized with port(s): 8080 (http)
+2023-02-16 10:11:17,000 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-16 10:11:17,001 [restartedMain] INFO  o.a.catalina.core.StandardService 173 - Starting service [Tomcat]
+2023-02-16 10:11:17,001 [restartedMain] INFO  o.a.catalina.core.StandardEngine 173 - Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-02-16 10:11:17,151 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring embedded WebApplicationContext
+2023-02-16 10:11:17,152 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext 292 - Root WebApplicationContext: initialization completed in 2137 ms
+2023-02-16 10:11:17,712 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping 57 - Adding welcome page template: index
+2023-02-16 10:11:18,090 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer 59 - LiveReload server is running on port 35729
+2023-02-16 10:11:18,127 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Starting ProtocolHandler ["http-nio-8080"]
+2023-02-16 10:11:18,153 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 220 - Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 10:11:18,194 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-2) is starting
+2023-02-16 10:11:18,197 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:0)
+2023-02-16 10:11:18,198 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-2) started in 48ms (build:14ms init:31ms start:3ms)
+2023-02-16 10:11:18,203 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 61 - Started FhirEtlApplication in 3.686 seconds (JVM running for 4.153)
+2023-02-16 10:11:18,356 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 10:11:18,357 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 525 - Initializing Servlet 'dispatcherServlet'
+2023-02-16 10:11:18,357 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 547 - Completed initialization in 0 ms
+2023-02-16 10:12:44,542 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-3) is starting
+2023-02-16 10:12:44,554 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 10:12:44,554 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route1 (timer://foo)
+2023-02-16 10:12:44,554 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-3) started in 132ms (build:3ms init:118ms start:11ms)
+2023-02-16 10:12:49,547 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-3) is shutting down (timeout:45s)
+2023-02-16 10:12:49,553 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 10:12:49,553 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route1 (timer://foo)
+2023-02-16 10:12:49,555 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-3) shutdown in 8ms (uptime:5s)
+2023-02-16 10:13:09,335 [http-nio-8080-exec-3] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-4) is starting
+2023-02-16 10:13:09,336 [http-nio-8080-exec-3] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 10:13:09,336 [http-nio-8080-exec-3] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route2 (timer://foo)
+2023-02-16 10:13:09,337 [http-nio-8080-exec-3] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-4) started in 11ms (build:3ms init:8ms start:0ms)
+2023-02-16 10:13:14,331 [http-nio-8080-exec-3] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-4) is shutting down (timeout:45s)
+2023-02-16 10:13:14,332 [http-nio-8080-exec-3] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 10:13:14,332 [http-nio-8080-exec-3] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route2 (timer://foo)
+2023-02-16 10:13:14,333 [http-nio-8080-exec-3] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-4) shutdown in 2ms (uptime:4s)
+2023-02-16 10:14:09,482 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-2) is shutting down (timeout:45s)
+2023-02-16 10:14:09,482 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:0)
+2023-02-16 10:14:09,483 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-2) shutdown in 1ms (uptime:2m51s)
+2023-02-16 10:14:19,623 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 55 - Starting FhirEtlApplication using Java 17.0.5 on June4693-450G7 with PID 3004 (C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration\target\classes started by June.Wu in C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration)
+2023-02-16 10:14:19,626 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 631 - No active profile set, falling back to 1 default profile: "default"
+2023-02-16 10:14:19,687 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls 255 - The Class-Path manifest attribute in C:\Users\june.wu\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/C:/Users/june.wu/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2023-02-16 10:14:19,687 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-16 10:14:19,687 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-16 10:14:21,155 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 108 - Tomcat initialized with port(s): 8080 (http)
+2023-02-16 10:14:21,165 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-16 10:14:21,165 [restartedMain] INFO  o.a.catalina.core.StandardService 173 - Starting service [Tomcat]
+2023-02-16 10:14:21,165 [restartedMain] INFO  o.a.catalina.core.StandardEngine 173 - Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-02-16 10:14:21,277 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring embedded WebApplicationContext
+2023-02-16 10:14:21,277 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext 292 - Root WebApplicationContext: initialization completed in 1589 ms
+2023-02-16 10:14:21,637 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping 57 - Adding welcome page template: index
+2023-02-16 10:14:22,019 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer 59 - LiveReload server is running on port 35729
+2023-02-16 10:14:22,067 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Starting ProtocolHandler ["http-nio-8080"]
+2023-02-16 10:14:22,085 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 220 - Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 10:14:22,137 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-2) is starting
+2023-02-16 10:14:22,141 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:0)
+2023-02-16 10:14:22,142 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-2) started in 52ms (build:10ms init:39ms start:3ms)
+2023-02-16 10:14:22,146 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 61 - Started FhirEtlApplication in 3.009 seconds (JVM running for 3.623)
+2023-02-16 10:14:28,418 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 10:14:28,418 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 525 - Initializing Servlet 'dispatcherServlet'
+2023-02-16 10:14:28,421 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 547 - Completed initialization in 3 ms
+2023-02-16 10:16:23,352 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-3) is starting
+2023-02-16 10:16:23,363 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 10:16:23,364 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route1 (timer://foo)
+2023-02-16 10:16:23,364 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-3) started in 119ms (build:5ms init:103ms start:11ms)
+2023-02-16 10:16:28,359 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-3) is shutting down (timeout:45s)
+2023-02-16 10:16:28,364 [Camel (camel-3) thread #2 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 45 seconds. Inflights per route: [route1 = 1]
+2023-02-16 10:16:29,371 [Camel (camel-3) thread #2 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 44 seconds. Inflights per route: [route1 = 1]
+2023-02-16 10:16:30,384 [Camel (camel-3) thread #2 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 43 seconds. Inflights per route: [route1 = 1]
+2023-02-16 10:16:31,392 [Camel (camel-3) thread #2 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 42 seconds. Inflights per route: [route1 = 1]
+2023-02-16 10:16:32,402 [Camel (camel-3) thread #2 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 41 seconds. Inflights per route: [route1 = 1]
+2023-02-16 10:16:33,411 [Camel (camel-3) thread #2 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 40 seconds. Inflights per route: [route1 = 1]
+2023-02-16 10:16:34,423 [Camel (camel-3) thread #2 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 39 seconds. Inflights per route: [route1 = 1]
+2023-02-16 10:16:35,432 [Camel (camel-3) thread #2 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 38 seconds. Inflights per route: [route1 = 1]
+2023-02-16 10:16:36,442 [Camel (camel-3) thread #2 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 37 seconds. Inflights per route: [route1 = 1]
+2023-02-16 10:16:37,443 [Camel (camel-3) thread #2 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 36 seconds. Inflights per route: [route1 = 1]
+2023-02-16 10:16:38,452 [Camel (camel-3) thread #2 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 35 seconds. Inflights per route: [route1 = 1]
+2023-02-16 10:16:38,788 [Camel (camel-3) thread #1 - timer://foo] ERROR c.e.f.RouteBuilderTool$thisRouteBuilder 70 - The server principal "IntelligentIotRW_DEV" is not able to access the database "master" under the current security context. ClientConnectionId:6abe94f8-6076-47e5-96a0-f9d44359ec18
+2023-02-16 10:16:39,467 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 10:16:39,467 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route1 (timer://foo)
+2023-02-16 10:16:39,469 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-3) shutdown in 11s110ms (uptime:16s)
+2023-02-16 10:16:50,316 [http-nio-8080-exec-4] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-4) is starting
+2023-02-16 10:16:50,317 [http-nio-8080-exec-4] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 10:16:50,317 [http-nio-8080-exec-4] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route2 (timer://foo)
+2023-02-16 10:16:50,317 [http-nio-8080-exec-4] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-4) started in 16ms (build:4ms init:11ms start:1ms)
+2023-02-16 10:16:55,331 [http-nio-8080-exec-4] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-4) is shutting down (timeout:45s)
+2023-02-16 10:16:55,332 [http-nio-8080-exec-4] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 10:16:55,332 [http-nio-8080-exec-4] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route2 (timer://foo)
+2023-02-16 10:16:55,333 [http-nio-8080-exec-4] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-4) shutdown in 2ms (uptime:5s)
+2023-02-16 10:16:58,509 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-5) is starting
+2023-02-16 10:16:58,510 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 10:16:58,510 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route3 (timer://foo)
+2023-02-16 10:16:58,510 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-5) started in 13ms (build:3ms init:10ms start:0ms)
+2023-02-16 10:17:03,515 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-5) is shutting down (timeout:45s)
+2023-02-16 10:17:03,516 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 10:17:03,516 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route3 (timer://foo)
+2023-02-16 10:17:03,517 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-5) shutdown in 2ms (uptime:5s)
+2023-02-16 10:18:39,626 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-6) is starting
+2023-02-16 10:18:39,627 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 10:18:39,627 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route4 (timer://foo)
+2023-02-16 10:18:39,627 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-6) started in 15ms (build:4ms init:10ms start:1ms)
+2023-02-16 10:18:44,632 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-6) is shutting down (timeout:45s)
+2023-02-16 10:18:44,632 [Camel (camel-6) thread #8 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 45 seconds. Inflights per route: [route4 = 1]
+2023-02-16 10:18:45,641 [Camel (camel-6) thread #8 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 44 seconds. Inflights per route: [route4 = 1]
+2023-02-16 10:18:46,650 [Camel (camel-6) thread #8 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 43 seconds. Inflights per route: [route4 = 1]
+2023-02-16 10:18:47,665 [Camel (camel-6) thread #8 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 42 seconds. Inflights per route: [route4 = 1]
+2023-02-16 10:18:48,676 [Camel (camel-6) thread #8 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 41 seconds. Inflights per route: [route4 = 1]
+2023-02-16 10:18:49,685 [Camel (camel-6) thread #8 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 40 seconds. Inflights per route: [route4 = 1]
+2023-02-16 10:18:50,698 [Camel (camel-6) thread #8 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 39 seconds. Inflights per route: [route4 = 1]
+2023-02-16 10:18:51,708 [Camel (camel-6) thread #8 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 38 seconds. Inflights per route: [route4 = 1]
+2023-02-16 10:18:52,717 [Camel (camel-6) thread #8 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 37 seconds. Inflights per route: [route4 = 1]
+2023-02-16 10:18:53,728 [Camel (camel-6) thread #8 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 36 seconds. Inflights per route: [route4 = 1]
+2023-02-16 10:18:54,742 [Camel (camel-6) thread #8 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 35 seconds. Inflights per route: [route4 = 1]
+2023-02-16 10:18:55,746 [Camel (camel-6) thread #8 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 34 seconds. Inflights per route: [route4 = 1]
+2023-02-16 10:18:56,723 [Camel (camel-6) thread #7 - timer://foo] ERROR c.e.f.RouteBuilderTool$thisRouteBuilder 70 - 連接到主機 SQLEXPRESS (連接埠 1433) 的 TCP/IP 連接已經失敗。錯誤: "????????? (SQLEXPRESS)。確認連接屬性。確認 SQL Server 執行個體是否在主機上執行並接受在通訊埠的 TCP/IP 連接。確認防火牆未封鎖通訊埠的 TCP 連接。"。
+2023-02-16 10:18:56,755 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 10:18:56,756 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route4 (timer://foo)
+2023-02-16 10:18:56,756 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-6) shutdown in 12s124ms (uptime:17s)
+2023-02-16 10:19:13,300 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-7) is starting
+2023-02-16 10:19:13,301 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 10:19:13,301 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route5 (timer://foo)
+2023-02-16 10:19:13,301 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-7) started in 13ms (build:3ms init:10ms start:0ms)
+2023-02-16 10:19:18,303 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-7) is shutting down (timeout:45s)
+2023-02-16 10:19:18,304 [Camel (camel-7) thread #10 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 45 seconds. Inflights per route: [route5 = 1]
+2023-02-16 10:19:19,312 [Camel (camel-7) thread #10 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 44 seconds. Inflights per route: [route5 = 1]
+2023-02-16 10:19:20,320 [Camel (camel-7) thread #10 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 43 seconds. Inflights per route: [route5 = 1]
+2023-02-16 10:19:21,329 [Camel (camel-7) thread #10 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 42 seconds. Inflights per route: [route5 = 1]
+2023-02-16 10:19:22,334 [Camel (camel-7) thread #10 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 41 seconds. Inflights per route: [route5 = 1]
+2023-02-16 10:19:23,340 [Camel (camel-7) thread #10 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 40 seconds. Inflights per route: [route5 = 1]
+2023-02-16 10:19:24,355 [Camel (camel-7) thread #10 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 39 seconds. Inflights per route: [route5 = 1]
+2023-02-16 10:19:25,361 [Camel (camel-7) thread #10 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 38 seconds. Inflights per route: [route5 = 1]
+2023-02-16 10:19:26,372 [Camel (camel-7) thread #10 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 37 seconds. Inflights per route: [route5 = 1]
+2023-02-16 10:19:27,382 [Camel (camel-7) thread #10 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 36 seconds. Inflights per route: [route5 = 1]
+2023-02-16 10:19:28,390 [Camel (camel-7) thread #10 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 35 seconds. Inflights per route: [route5 = 1]
+2023-02-16 10:19:28,959 [Camel (camel-7) thread #9 - timer://foo] ERROR c.e.f.RouteBuilderTool$thisRouteBuilder 70 - 連接到主機 localhost://SQLEXPRESS (連接埠 1433) 的 TCP/IP 連接已經失敗。錯誤: "localhost://SQLEXPRESS。確認連接屬性。確認 SQL Server 執行個體是否在主機上執行並接受在通訊埠的 TCP/IP 連接。確認防火牆未封鎖通訊埠的 TCP 連接。"。
+2023-02-16 10:19:29,398 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 10:19:29,398 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route5 (timer://foo)
+2023-02-16 10:19:29,399 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-7) shutdown in 11s95ms (uptime:16s)
+2023-02-16 10:19:35,701 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-8) is starting
+2023-02-16 10:19:35,702 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 10:19:35,702 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route6 (timer://foo)
+2023-02-16 10:19:35,702 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-8) started in 14ms (build:3ms init:11ms start:0ms)
+2023-02-16 10:19:40,704 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-8) is shutting down (timeout:45s)
+2023-02-16 10:19:40,705 [Camel (camel-8) thread #12 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 45 seconds. Inflights per route: [route6 = 1]
+2023-02-16 10:19:41,715 [Camel (camel-8) thread #12 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 44 seconds. Inflights per route: [route6 = 1]
+2023-02-16 10:19:42,724 [Camel (camel-8) thread #12 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 43 seconds. Inflights per route: [route6 = 1]
+2023-02-16 10:19:43,737 [Camel (camel-8) thread #12 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 42 seconds. Inflights per route: [route6 = 1]
+2023-02-16 10:19:44,751 [Camel (camel-8) thread #12 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 41 seconds. Inflights per route: [route6 = 1]
+2023-02-16 10:19:45,759 [Camel (camel-8) thread #12 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 40 seconds. Inflights per route: [route6 = 1]
+2023-02-16 10:19:46,763 [Camel (camel-8) thread #12 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 39 seconds. Inflights per route: [route6 = 1]
+2023-02-16 10:19:47,776 [Camel (camel-8) thread #12 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 38 seconds. Inflights per route: [route6 = 1]
+2023-02-16 10:19:48,785 [Camel (camel-8) thread #12 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 37 seconds. Inflights per route: [route6 = 1]
+2023-02-16 10:19:49,796 [Camel (camel-8) thread #12 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 36 seconds. Inflights per route: [route6 = 1]
+2023-02-16 10:19:50,807 [Camel (camel-8) thread #12 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 35 seconds. Inflights per route: [route6 = 1]
+2023-02-16 10:19:51,379 [Camel (camel-8) thread #11 - timer://foo] ERROR c.e.f.RouteBuilderTool$thisRouteBuilder 70 - 連接到主機 localhost: (連接埠 1433) 的 TCP/IP 連接已經失敗。錯誤: "localhost:。確認連接屬性。確認 SQL Server 執行個體是否在主機上執行並接受在通訊埠的 TCP/IP 連接。確認防火牆未封鎖通訊埠的 TCP 連接。"。
+2023-02-16 10:19:51,822 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 10:19:51,823 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route6 (timer://foo)
+2023-02-16 10:19:51,823 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-8) shutdown in 11s118ms (uptime:16s)
+2023-02-16 10:19:56,912 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-9) is starting
+2023-02-16 10:19:56,913 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 10:19:56,914 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route7 (timer://foo)
+2023-02-16 10:19:56,914 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-9) started in 14ms (build:3ms init:10ms start:1ms)
+2023-02-16 10:20:01,921 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-9) is shutting down (timeout:45s)
+2023-02-16 10:20:01,922 [Camel (camel-9) thread #14 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 45 seconds. Inflights per route: [route7 = 1]
+2023-02-16 10:20:02,933 [Camel (camel-9) thread #14 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 44 seconds. Inflights per route: [route7 = 1]
+2023-02-16 10:20:03,943 [Camel (camel-9) thread #14 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 43 seconds. Inflights per route: [route7 = 1]
+2023-02-16 10:20:04,950 [Camel (camel-9) thread #14 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 42 seconds. Inflights per route: [route7 = 1]
+2023-02-16 10:20:05,959 [Camel (camel-9) thread #14 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 41 seconds. Inflights per route: [route7 = 1]
+2023-02-16 10:20:06,969 [Camel (camel-9) thread #14 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 40 seconds. Inflights per route: [route7 = 1]
+2023-02-16 10:20:07,980 [Camel (camel-9) thread #14 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 39 seconds. Inflights per route: [route7 = 1]
+2023-02-16 10:20:08,992 [Camel (camel-9) thread #14 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 38 seconds. Inflights per route: [route7 = 1]
+2023-02-16 10:20:10,006 [Camel (camel-9) thread #14 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 37 seconds. Inflights per route: [route7 = 1]
+2023-02-16 10:20:11,016 [Camel (camel-9) thread #14 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 36 seconds. Inflights per route: [route7 = 1]
+2023-02-16 10:20:12,024 [Camel (camel-9) thread #14 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 35 seconds. Inflights per route: [route7 = 1]
+2023-02-16 10:20:12,578 [Camel (camel-9) thread #13 - timer://foo] ERROR c.e.f.RouteBuilderTool$thisRouteBuilder 70 - 連接到主機 localhost: (連接埠 1433) 的 TCP/IP 連接已經失敗。錯誤: "localhost:。確認連接屬性。確認 SQL Server 執行個體是否在主機上執行並接受在通訊埠的 TCP/IP 連接。確認防火牆未封鎖通訊埠的 TCP 連接。"。
+2023-02-16 10:20:13,036 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 10:20:13,036 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route7 (timer://foo)
+2023-02-16 10:20:13,037 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-9) shutdown in 11s115ms (uptime:16s)
+2023-02-16 10:20:39,128 [http-nio-8080-exec-3] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-10) is starting
+2023-02-16 10:20:39,129 [http-nio-8080-exec-3] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 10:20:39,129 [http-nio-8080-exec-3] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route8 (timer://foo)
+2023-02-16 10:20:39,129 [http-nio-8080-exec-3] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-10) started in 15ms (build:3ms init:12ms start:0ms)
+2023-02-16 10:20:44,144 [http-nio-8080-exec-3] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-10) is shutting down (timeout:45s)
+2023-02-16 10:20:44,145 [Camel (camel-10) thread #16 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 45 seconds. Inflights per route: [route8 = 1]
+2023-02-16 10:20:45,155 [Camel (camel-10) thread #16 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 44 seconds. Inflights per route: [route8 = 1]
+2023-02-16 10:20:46,164 [Camel (camel-10) thread #16 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 43 seconds. Inflights per route: [route8 = 1]
+2023-02-16 10:20:47,175 [Camel (camel-10) thread #16 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 42 seconds. Inflights per route: [route8 = 1]
+2023-02-16 10:20:48,180 [Camel (camel-10) thread #16 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 41 seconds. Inflights per route: [route8 = 1]
+2023-02-16 10:20:49,187 [Camel (camel-10) thread #16 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 40 seconds. Inflights per route: [route8 = 1]
+2023-02-16 10:20:50,199 [Camel (camel-10) thread #16 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 39 seconds. Inflights per route: [route8 = 1]
+2023-02-16 10:20:51,209 [Camel (camel-10) thread #16 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 38 seconds. Inflights per route: [route8 = 1]
+2023-02-16 10:20:52,216 [Camel (camel-10) thread #16 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 37 seconds. Inflights per route: [route8 = 1]
+2023-02-16 10:20:53,232 [Camel (camel-10) thread #16 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 36 seconds. Inflights per route: [route8 = 1]
+2023-02-16 10:20:54,243 [Camel (camel-10) thread #16 - ShutdownTask] INFO  o.a.c.i.e.DefaultShutdownStrategy 698 - Waiting as there are still 1 inflight and pending exchanges to complete, timeout in 35 seconds. Inflights per route: [route8 = 1]
+2023-02-16 10:20:54,793 [Camel (camel-10) thread #15 - timer://foo] ERROR c.e.f.RouteBuilderTool$thisRouteBuilder 70 - 連接到主機 localhost//SQLEXPRESS (連接埠 1433) 的 TCP/IP 連接已經失敗。錯誤: "localhost//SQLEXPRESS。確認連接屬性。確認 SQL Server 執行個體是否在主機上執行並接受在通訊埠的 TCP/IP 連接。確認防火牆未封鎖通訊埠的 TCP 連接。"。
+2023-02-16 10:20:55,251 [http-nio-8080-exec-3] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 10:20:55,251 [http-nio-8080-exec-3] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route8 (timer://foo)
+2023-02-16 10:20:55,252 [http-nio-8080-exec-3] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-10) shutdown in 11s107ms (uptime:16s)
+2023-02-16 10:21:03,526 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-11) is starting
+2023-02-16 10:21:03,527 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 10:21:03,527 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route9 (timer://foo)
+2023-02-16 10:21:03,527 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-11) started in 13ms (build:3ms init:10ms start:0ms)
+2023-02-16 10:21:08,528 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-11) is shutting down (timeout:45s)
+2023-02-16 10:21:08,529 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 10:21:08,529 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route9 (timer://foo)
+2023-02-16 10:21:08,529 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-11) shutdown in 1ms (uptime:5s)
+2023-02-16 10:21:30,099 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-2) is shutting down (timeout:45s)
+2023-02-16 10:21:30,099 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:0)
+2023-02-16 10:21:30,100 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-2) shutdown in 0ms (uptime:7m7s)
+2023-02-16 10:21:50,086 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 55 - Starting FhirEtlApplication using Java 17.0.5 on June4693-450G7 with PID 28292 (C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration\target\classes started by June.Wu in C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration)
+2023-02-16 10:21:50,088 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 631 - No active profile set, falling back to 1 default profile: "default"
+2023-02-16 10:21:50,158 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls 255 - The Class-Path manifest attribute in C:\Users\june.wu\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/C:/Users/june.wu/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2023-02-16 10:21:50,159 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-16 10:21:50,159 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-16 10:21:51,843 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 108 - Tomcat initialized with port(s): 8080 (http)
+2023-02-16 10:21:51,854 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-16 10:21:51,854 [restartedMain] INFO  o.a.catalina.core.StandardService 173 - Starting service [Tomcat]
+2023-02-16 10:21:51,854 [restartedMain] INFO  o.a.catalina.core.StandardEngine 173 - Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-02-16 10:21:51,980 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring embedded WebApplicationContext
+2023-02-16 10:21:51,980 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext 292 - Root WebApplicationContext: initialization completed in 1820 ms
+2023-02-16 10:21:52,335 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping 57 - Adding welcome page template: index
+2023-02-16 10:21:52,742 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer 59 - LiveReload server is running on port 35729
+2023-02-16 10:21:52,787 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Starting ProtocolHandler ["http-nio-8080"]
+2023-02-16 10:21:52,810 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 220 - Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 10:21:52,867 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-2) is starting
+2023-02-16 10:21:52,872 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:0)
+2023-02-16 10:21:52,872 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-2) started in 55ms (build:11ms init:40ms start:4ms)
+2023-02-16 10:21:52,877 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 61 - Started FhirEtlApplication in 3.264 seconds (JVM running for 3.916)
+2023-02-16 10:21:59,433 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 10:21:59,433 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 525 - Initializing Servlet 'dispatcherServlet'
+2023-02-16 10:21:59,435 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 547 - Completed initialization in 2 ms
+2023-02-16 10:22:24,752 [http-nio-8080-exec-10] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-3) is starting
+2023-02-16 10:22:24,763 [http-nio-8080-exec-10] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 10:22:24,763 [http-nio-8080-exec-10] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route1 (timer://foo)
+2023-02-16 10:22:24,763 [http-nio-8080-exec-10] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-3) started in 117ms (build:3ms init:104ms start:10ms)
+2023-02-16 10:22:25,938 [Camel (camel-3) thread #1 - timer://foo] ERROR c.e.f.RouteBuilderTool$thisRouteBuilder 70 - 驅動程式無法使用安全通訊端層 (SSL) 加密建立與 SQL Server 的安全連接。錯誤: "The server selected protocol version TLS10 is not accepted by client preferences [TLS13, TLS12]"。 ClientConnectionId:5b76377c-f3a4-4174-80ae-e1d4239af402
+2023-02-16 10:22:29,766 [http-nio-8080-exec-10] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-3) is shutting down (timeout:45s)
+2023-02-16 10:22:29,771 [http-nio-8080-exec-10] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 10:22:29,772 [http-nio-8080-exec-10] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route1 (timer://foo)
+2023-02-16 10:22:29,773 [http-nio-8080-exec-10] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-3) shutdown in 6ms (uptime:5s)
+2023-02-16 10:31:14,178 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-4) is starting
+2023-02-16 10:31:14,179 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 10:31:14,179 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route2 (timer://foo)
+2023-02-16 10:31:14,180 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-4) started in 18ms (build:3ms init:14ms start:1ms)
+2023-02-16 10:31:15,237 [Camel (camel-4) thread #3 - timer://foo] ERROR c.e.f.RouteBuilderTool$thisRouteBuilder 70 - 驅動程式無法使用安全通訊端層 (SSL) 加密建立與 SQL Server 的安全連接。錯誤: "The server selected protocol version TLS10 is not accepted by client preferences [TLS13, TLS12]"。 ClientConnectionId:cdf48311-7989-4474-9147-67a4288a7bd8
+2023-02-16 10:31:19,190 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-4) is shutting down (timeout:45s)
+2023-02-16 10:31:19,191 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 10:31:19,191 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route2 (timer://foo)
+2023-02-16 10:31:19,191 [http-nio-8080-exec-7] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-4) shutdown in 1ms (uptime:5s)
+2023-02-16 10:33:54,379 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-5) is starting
+2023-02-16 10:33:54,380 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 10:33:54,380 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route3 (timer://foo)
+2023-02-16 10:33:54,381 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-5) started in 16ms (build:4ms init:12ms start:0ms)
+2023-02-16 10:33:55,470 [Camel (camel-5) thread #5 - timer://foo] ERROR c.e.f.RouteBuilderTool$thisRouteBuilder 70 - 驅動程式無法使用安全通訊端層 (SSL) 加密建立與 SQL Server 的安全連接。錯誤: "The server selected protocol version TLS10 is not accepted by client preferences [TLS13, TLS12]"。 ClientConnectionId:eff3a6c7-77a6-4cd8-948c-9f84cf8dbda3
+2023-02-16 10:33:59,391 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-5) is shutting down (timeout:45s)
+2023-02-16 10:33:59,392 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 10:33:59,393 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route3 (timer://foo)
+2023-02-16 10:33:59,393 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-5) shutdown in 2ms (uptime:5s)
+2023-02-16 10:34:09,591 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-2) is shutting down (timeout:45s)
+2023-02-16 10:34:09,591 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:0)
+2023-02-16 10:34:09,591 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-2) shutdown in 0ms (uptime:12m16s)
+2023-02-16 10:34:44,779 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 55 - Starting FhirEtlApplication using Java 17.0.5 on June4693-450G7 with PID 19540 (C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration\target\classes started by June.Wu in C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration)
+2023-02-16 10:34:44,781 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 631 - No active profile set, falling back to 1 default profile: "default"
+2023-02-16 10:34:44,844 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls 255 - The Class-Path manifest attribute in C:\Users\june.wu\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/C:/Users/june.wu/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2023-02-16 10:34:44,845 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-16 10:34:44,845 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-16 10:34:46,519 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 108 - Tomcat initialized with port(s): 8080 (http)
+2023-02-16 10:34:46,532 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-16 10:34:46,533 [restartedMain] INFO  o.a.catalina.core.StandardService 173 - Starting service [Tomcat]
+2023-02-16 10:34:46,533 [restartedMain] INFO  o.a.catalina.core.StandardEngine 173 - Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-02-16 10:34:46,673 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring embedded WebApplicationContext
+2023-02-16 10:34:46,673 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext 292 - Root WebApplicationContext: initialization completed in 1827 ms
+2023-02-16 10:34:47,078 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping 57 - Adding welcome page template: index
+2023-02-16 10:34:47,617 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer 59 - LiveReload server is running on port 35729
+2023-02-16 10:34:47,679 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Starting ProtocolHandler ["http-nio-8080"]
+2023-02-16 10:34:47,707 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 220 - Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 10:34:47,774 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-2) is starting
+2023-02-16 10:34:47,781 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:0)
+2023-02-16 10:34:47,782 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-2) started in 71ms (build:14ms init:52ms start:5ms)
+2023-02-16 10:34:47,789 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 61 - Started FhirEtlApplication in 3.592 seconds (JVM running for 4.374)
+2023-02-16 10:34:49,823 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 10:34:49,823 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 525 - Initializing Servlet 'dispatcherServlet'
+2023-02-16 10:34:49,824 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 547 - Completed initialization in 1 ms
+2023-02-16 10:34:50,049 [http-nio-8080-exec-1] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-3) is starting
+2023-02-16 10:34:50,061 [http-nio-8080-exec-1] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 10:34:50,061 [http-nio-8080-exec-1] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route1 (timer://foo)
+2023-02-16 10:34:50,061 [http-nio-8080-exec-1] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-3) started in 135ms (build:5ms init:118ms start:12ms)
+2023-02-16 10:34:51,276 [Camel (camel-3) thread #1 - timer://foo] ERROR c.e.f.RouteBuilderTool$thisRouteBuilder 70 - 驅動程式無法使用安全通訊端層 (SSL) 加密建立與 SQL Server 的安全連接。錯誤: "The server selected protocol version TLS10 is not accepted by client preferences [TLS13, TLS12]"。 ClientConnectionId:1a40343d-c9ff-47df-a186-2e53101d304c
+2023-02-16 10:34:55,069 [http-nio-8080-exec-1] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-3) is shutting down (timeout:45s)
+2023-02-16 10:34:55,074 [http-nio-8080-exec-1] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 10:34:55,075 [http-nio-8080-exec-1] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route1 (timer://foo)
+2023-02-16 10:34:55,076 [http-nio-8080-exec-1] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-3) shutdown in 7ms (uptime:5s)
+2023-02-16 10:56:36,246 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 55 - Starting FhirEtlApplication using Java 17.0.5 on June4693-450G7 with PID 24488 (C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration\target\classes started by June.Wu in C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration)
+2023-02-16 10:56:36,249 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 631 - No active profile set, falling back to 1 default profile: "default"
+2023-02-16 10:56:36,346 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls 255 - The Class-Path manifest attribute in C:\Users\june.wu\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/C:/Users/june.wu/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2023-02-16 10:56:36,346 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-16 10:56:36,347 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-16 10:56:37,852 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 108 - Tomcat initialized with port(s): 8080 (http)
+2023-02-16 10:56:37,863 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-16 10:56:37,863 [restartedMain] INFO  o.a.catalina.core.StandardService 173 - Starting service [Tomcat]
+2023-02-16 10:56:37,864 [restartedMain] INFO  o.a.catalina.core.StandardEngine 173 - Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-02-16 10:56:37,960 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring embedded WebApplicationContext
+2023-02-16 10:56:37,961 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext 292 - Root WebApplicationContext: initialization completed in 1613 ms
+2023-02-16 10:56:38,312 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping 57 - Adding welcome page template: index
+2023-02-16 10:56:38,683 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer 59 - LiveReload server is running on port 35729
+2023-02-16 10:56:38,723 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Starting ProtocolHandler ["http-nio-8080"]
+2023-02-16 10:56:38,747 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 220 - Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 10:56:38,798 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-2) is starting
+2023-02-16 10:56:38,802 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:0)
+2023-02-16 10:56:38,802 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-2) started in 53ms (build:11ms init:39ms start:3ms)
+2023-02-16 10:56:38,808 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 61 - Started FhirEtlApplication in 3.511 seconds (JVM running for 4.661)
+2023-02-16 10:56:38,927 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 10:56:38,927 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 525 - Initializing Servlet 'dispatcherServlet'
+2023-02-16 10:56:38,928 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 547 - Completed initialization in 1 ms
+2023-02-16 10:56:47,565 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-3) is starting
+2023-02-16 10:56:47,580 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 10:56:47,581 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route1 (timer://foo)
+2023-02-16 10:56:47,581 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-3) started in 130ms (build:3ms init:113ms start:14ms)
+2023-02-16 10:56:48,868 [Camel (camel-3) thread #1 - timer://foo] ERROR c.e.f.RouteBuilderTool$thisRouteBuilder 70 - 使用者 'june' 的登入失敗。 ClientConnectionId:0268cfce-53ff-4d7b-b9de-03840a3a332c
+2023-02-16 10:56:52,591 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-3) is shutting down (timeout:45s)
+2023-02-16 10:56:52,597 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 10:56:52,597 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route1 (timer://foo)
+2023-02-16 10:56:52,599 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-3) shutdown in 7ms (uptime:5s)
+2023-02-16 10:58:36,530 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-4) is starting
+2023-02-16 10:58:36,531 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 10:58:36,531 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route2 (timer://foo)
+2023-02-16 10:58:36,531 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-4) started in 11ms (build:3ms init:8ms start:0ms)
+2023-02-16 10:58:37,621 [Camel (camel-4) thread #3 - timer://foo] ERROR c.e.f.RouteBuilderTool$thisRouteBuilder 70 - 驅動程式無法使用安全通訊端層 (SSL) 加密建立與 SQL Server 的安全連接。錯誤: "The server selected protocol version TLS10 is not accepted by client preferences [TLS13, TLS12]"。 ClientConnectionId:84063a0b-309b-4911-aa59-69f1e2001062
+2023-02-16 10:58:41,542 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-4) is shutting down (timeout:45s)
+2023-02-16 10:58:41,543 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 10:58:41,544 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route2 (timer://foo)
+2023-02-16 10:58:41,544 [http-nio-8080-exec-8] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-4) shutdown in 2ms (uptime:5s)
+2023-02-16 11:02:28,416 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-5) is starting
+2023-02-16 11:02:28,417 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 11:02:28,418 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route3 (timer://foo)
+2023-02-16 11:02:28,418 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-5) started in 17ms (build:3ms init:12ms start:2ms)
+2023-02-16 11:02:29,478 [Camel (camel-5) thread #5 - timer://foo] ERROR c.e.f.RouteBuilderTool$thisRouteBuilder 70 - 驅動程式無法使用安全通訊端層 (SSL) 加密建立與 SQL Server 的安全連接。錯誤: "The server selected protocol version TLS10 is not accepted by client preferences [TLS13, TLS12]"。 ClientConnectionId:c0d06d8d-94f7-4f40-a084-48e0c31e771b
+2023-02-16 11:02:33,421 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-5) is shutting down (timeout:45s)
+2023-02-16 11:02:33,427 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 11:02:33,427 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route3 (timer://foo)
+2023-02-16 11:02:33,427 [http-nio-8080-exec-9] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-5) shutdown in 7ms (uptime:5s)
+2023-02-16 11:02:45,598 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-2) is shutting down (timeout:45s)
+2023-02-16 11:02:45,599 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:0)
+2023-02-16 11:02:45,599 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-2) shutdown in 0ms (uptime:6m6s)
+2023-02-16 11:02:57,962 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 55 - Starting FhirEtlApplication using Java 17.0.5 on June4693-450G7 with PID 4676 (C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration\target\classes started by June.Wu in C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration)
+2023-02-16 11:02:57,964 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 631 - No active profile set, falling back to 1 default profile: "default"
+2023-02-16 11:02:58,019 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls 255 - The Class-Path manifest attribute in C:\Users\june.wu\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/C:/Users/june.wu/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2023-02-16 11:02:58,019 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-16 11:02:58,019 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-16 11:02:59,417 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 108 - Tomcat initialized with port(s): 8080 (http)
+2023-02-16 11:02:59,427 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-16 11:02:59,428 [restartedMain] INFO  o.a.catalina.core.StandardService 173 - Starting service [Tomcat]
+2023-02-16 11:02:59,428 [restartedMain] INFO  o.a.catalina.core.StandardEngine 173 - Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-02-16 11:02:59,577 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring embedded WebApplicationContext
+2023-02-16 11:02:59,577 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext 292 - Root WebApplicationContext: initialization completed in 1557 ms
+2023-02-16 11:03:00,005 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping 57 - Adding welcome page template: index
+2023-02-16 11:03:00,410 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer 59 - LiveReload server is running on port 35729
+2023-02-16 11:03:00,453 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Starting ProtocolHandler ["http-nio-8080"]
+2023-02-16 11:03:00,478 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 220 - Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 11:03:00,527 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-2) is starting
+2023-02-16 11:03:00,532 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:0)
+2023-02-16 11:03:00,533 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-2) started in 51ms (build:10ms init:37ms start:4ms)
+2023-02-16 11:03:00,538 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 61 - Started FhirEtlApplication in 3.074 seconds (JVM running for 3.83)
+2023-02-16 11:03:00,634 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 11:03:00,634 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 525 - Initializing Servlet 'dispatcherServlet'
+2023-02-16 11:03:00,635 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 547 - Completed initialization in 1 ms
+2023-02-16 11:03:26,508 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-3) is starting
+2023-02-16 11:03:26,518 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 11:03:26,518 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route1 (timer://foo)
+2023-02-16 11:03:26,518 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-3) started in 105ms (build:4ms init:92ms start:9ms)
+2023-02-16 11:03:27,826 [Camel (camel-3) thread #1 - timer://foo] ERROR c.e.f.RouteBuilderTool$thisRouteBuilder 70 - 驅動程式無法使用安全通訊端層 (SSL) 加密建立與 SQL Server 的安全連接。錯誤: "The server selected protocol version TLS10 is not accepted by client preferences [TLS13, TLS12]"。 ClientConnectionId:3d9da2a2-da86-42bb-b776-3abb4056d8b4
+2023-02-16 11:03:31,523 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-3) is shutting down (timeout:45s)
+2023-02-16 11:03:31,528 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 11:03:31,528 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route1 (timer://foo)
+2023-02-16 11:03:31,530 [http-nio-8080-exec-6] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-3) shutdown in 6ms (uptime:5s)
+2023-02-16 11:07:25,515 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 55 - Starting FhirEtlApplication using Java 17.0.5 on June4693-450G7 with PID 23036 (C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration\target\classes started by June.Wu in C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration)
+2023-02-16 11:07:25,517 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 631 - No active profile set, falling back to 1 default profile: "default"
+2023-02-16 11:07:25,567 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls 255 - The Class-Path manifest attribute in C:\Users\june.wu\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/C:/Users/june.wu/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2023-02-16 11:07:25,568 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-16 11:07:25,568 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-16 11:07:27,021 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 108 - Tomcat initialized with port(s): 8080 (http)
+2023-02-16 11:07:27,033 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-16 11:07:27,034 [restartedMain] INFO  o.a.catalina.core.StandardService 173 - Starting service [Tomcat]
+2023-02-16 11:07:27,034 [restartedMain] INFO  o.a.catalina.core.StandardEngine 173 - Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-02-16 11:07:27,232 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring embedded WebApplicationContext
+2023-02-16 11:07:27,232 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext 292 - Root WebApplicationContext: initialization completed in 1663 ms
+2023-02-16 11:07:27,638 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping 57 - Adding welcome page template: index
+2023-02-16 11:07:28,015 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer 59 - LiveReload server is running on port 35729
+2023-02-16 11:07:28,056 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Starting ProtocolHandler ["http-nio-8080"]
+2023-02-16 11:07:28,077 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 220 - Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 11:07:28,135 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-2) is starting
+2023-02-16 11:07:28,141 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:0)
+2023-02-16 11:07:28,141 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-2) started in 54ms (build:10ms init:40ms start:4ms)
+2023-02-16 11:07:28,146 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 61 - Started FhirEtlApplication in 3.1 seconds (JVM running for 3.765)
+2023-02-16 11:07:29,626 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 11:07:29,627 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 525 - Initializing Servlet 'dispatcherServlet'
+2023-02-16 11:07:29,629 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 547 - Completed initialization in 2 ms
+2023-02-16 11:08:08,311 [http-nio-8080-exec-10] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-3) is starting
+2023-02-16 11:08:08,325 [http-nio-8080-exec-10] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 11:08:08,325 [http-nio-8080-exec-10] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route1 (timer://foo)
+2023-02-16 11:08:08,325 [http-nio-8080-exec-10] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-3) started in 112ms (build:2ms init:97ms start:13ms)
+2023-02-16 11:08:09,578 [Camel (camel-3) thread #1 - timer://foo] ERROR c.e.f.RouteBuilderTool$thisRouteBuilder 70 - 驅動程式無法使用安全通訊端層 (SSL) 加密建立與 SQL Server 的安全連接。錯誤: "The server selected protocol version TLS10 is not accepted by client preferences [TLS13, TLS12]"。 ClientConnectionId:8bb0ef81-aa35-495a-b532-837a073c4bb8
+2023-02-16 11:08:13,326 [http-nio-8080-exec-10] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-3) is shutting down (timeout:45s)
+2023-02-16 11:08:13,333 [http-nio-8080-exec-10] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 11:08:13,333 [http-nio-8080-exec-10] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route1 (timer://foo)
+2023-02-16 11:08:13,335 [http-nio-8080-exec-10] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-3) shutdown in 8ms (uptime:5s)
+2023-02-16 11:10:46,090 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener 213 - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-02-16 11:10:46,092 [Thread-5] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-2) is shutting down (timeout:45s)
+2023-02-16 11:10:46,092 [Thread-5] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:0)
+2023-02-16 11:10:46,093 [Thread-5] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-2) shutdown in 0ms (uptime:3m17s)
+2023-02-16 11:10:46,119 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Pausing ProtocolHandler ["http-nio-8080"]
+2023-02-16 11:10:46,119 [Thread-5] INFO  o.a.catalina.core.StandardService 173 - Stopping service [Tomcat]
+2023-02-16 11:10:46,120 [Thread-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-02-16 11:10:46,139 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Stopping ProtocolHandler ["http-nio-8080"]
+2023-02-16 11:10:46,141 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Destroying ProtocolHandler ["http-nio-8080"]
+2023-02-16 11:10:46,253 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 55 - Starting FhirEtlApplication using Java 17.0.5 on June4693-450G7 with PID 23036 (C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration\target\classes started by June.Wu in C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration)
+2023-02-16 11:10:46,253 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 631 - No active profile set, falling back to 1 default profile: "default"
+2023-02-16 11:10:46,616 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 108 - Tomcat initialized with port(s): 8080 (http)
+2023-02-16 11:10:46,617 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-16 11:10:46,617 [restartedMain] INFO  o.a.catalina.core.StandardService 173 - Starting service [Tomcat]
+2023-02-16 11:10:46,617 [restartedMain] INFO  o.a.catalina.core.StandardEngine 173 - Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-02-16 11:10:46,649 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring embedded WebApplicationContext
+2023-02-16 11:10:46,649 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext 292 - Root WebApplicationContext: initialization completed in 392 ms
+2023-02-16 11:10:46,715 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping 57 - Adding welcome page template: index
+2023-02-16 11:10:46,886 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer 59 - LiveReload server is running on port 35729
+2023-02-16 11:10:46,913 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Starting ProtocolHandler ["http-nio-8080"]
+2023-02-16 11:10:46,916 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 220 - Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 11:10:46,928 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-5) is starting
+2023-02-16 11:10:46,929 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:0)
+2023-02-16 11:10:46,929 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-5) started in 11ms (build:5ms init:6ms start:0ms)
+2023-02-16 11:10:46,930 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 61 - Started FhirEtlApplication in 0.72 seconds (JVM running for 202.55)
+2023-02-16 11:10:46,932 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 63 - Condition evaluation unchanged
+2023-02-16 11:10:50,879 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 11:10:50,879 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 525 - Initializing Servlet 'dispatcherServlet'
+2023-02-16 11:10:50,880 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 547 - Completed initialization in 1 ms
+2023-02-16 11:10:50,902 [http-nio-8080-exec-1] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-6) is starting
+2023-02-16 11:10:50,903 [http-nio-8080-exec-1] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 11:10:50,903 [http-nio-8080-exec-1] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route2 (timer://foo)
+2023-02-16 11:10:50,903 [http-nio-8080-exec-1] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-6) started in 15ms (build:4ms init:10ms start:1ms)
+2023-02-16 11:10:51,980 [Camel (camel-6) thread #3 - timer://foo] ERROR c.e.f.RouteBuilderTool$thisRouteBuilder 70 - 驅動程式無法使用安全通訊端層 (SSL) 加密建立與 SQL Server 的安全連接。錯誤: "The server selected protocol version TLS10 is not accepted by client preferences [TLS13, TLS12]"。 ClientConnectionId:2112acbb-7bd3-4ed6-b43b-435b5196962c
+2023-02-16 11:10:55,918 [http-nio-8080-exec-1] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-6) is shutting down (timeout:45s)
+2023-02-16 11:10:55,919 [http-nio-8080-exec-1] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 11:10:55,919 [http-nio-8080-exec-1] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route2 (timer://foo)
+2023-02-16 11:10:55,919 [http-nio-8080-exec-1] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-6) shutdown in 1ms (uptime:5s)
+2023-02-16 11:21:12,241 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-5) is shutting down (timeout:45s)
+2023-02-16 11:21:12,241 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:0)
+2023-02-16 11:21:12,242 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-5) shutdown in 0ms (uptime:10m25s)
+2023-02-16 11:21:21,477 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 55 - Starting FhirEtlApplication using Java 17.0.5 on June4693-450G7 with PID 23604 (C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration\target\classes started by June.Wu in C:\Users\june.wu\Desktop\projects\FHIR\fhir_integration)
+2023-02-16 11:21:21,479 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 631 - No active profile set, falling back to 1 default profile: "default"
+2023-02-16 11:21:21,541 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls 255 - The Class-Path manifest attribute in C:\Users\june.wu\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/C:/Users/june.wu/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2023-02-16 11:21:21,541 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-16 11:21:21,542 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-16 11:21:23,207 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 108 - Tomcat initialized with port(s): 8080 (http)
+2023-02-16 11:21:23,219 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-16 11:21:23,220 [restartedMain] INFO  o.a.catalina.core.StandardService 173 - Starting service [Tomcat]
+2023-02-16 11:21:23,220 [restartedMain] INFO  o.a.catalina.core.StandardEngine 173 - Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-02-16 11:21:23,352 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring embedded WebApplicationContext
+2023-02-16 11:21:23,353 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext 292 - Root WebApplicationContext: initialization completed in 1811 ms
+2023-02-16 11:21:23,780 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping 57 - Adding welcome page template: index
+2023-02-16 11:21:24,277 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer 59 - LiveReload server is running on port 35729
+2023-02-16 11:21:24,348 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Starting ProtocolHandler ["http-nio-8080"]
+2023-02-16 11:21:24,376 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 220 - Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 11:21:24,452 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-2) is starting
+2023-02-16 11:21:24,459 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:0)
+2023-02-16 11:21:24,459 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-2) started in 77ms (build:15ms init:57ms start:5ms)
+2023-02-16 11:21:24,467 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 61 - Started FhirEtlApplication in 3.563 seconds (JVM running for 4.339)
+2023-02-16 11:21:25,377 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 11:21:25,377 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 525 - Initializing Servlet 'dispatcherServlet'
+2023-02-16 11:21:25,378 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 547 - Completed initialization in 0 ms
+2023-02-16 11:21:46,576 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-3) is starting
+2023-02-16 11:21:46,585 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 11:21:46,585 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route1 (timer://foo)
+2023-02-16 11:21:46,585 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-3) started in 94ms (build:3ms init:82ms start:9ms)
+2023-02-16 11:21:47,789 [Camel (camel-3) thread #1 - timer://foo] WARN  c.m.s.jdbc.internals.TDS.Channel 2050 - TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2023-02-16 11:21:51,586 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-3) is shutting down (timeout:45s)
+2023-02-16 11:21:51,591 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 11:21:51,592 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route1 (timer://foo)
+2023-02-16 11:21:51,593 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-3) shutdown in 6ms (uptime:5s)
+2023-02-16 11:22:36,770 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-2) is shutting down (timeout:45s)
+2023-02-16 11:22:36,770 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:0)
+2023-02-16 11:22:36,771 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-2) shutdown in 0ms (uptime:1m12s)
+2023-02-16 16:00:04,872 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 55 - Starting FhirEtlApplication using Java 17.0.5 on June4693-450G7 with PID 21392 (C:\Users\june.wu\Documents\GitHub\fhir_integration\target\classes started by June.Wu in C:\Users\june.wu\Documents\GitHub\fhir_integration)
+2023-02-16 16:00:04,874 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 631 - No active profile set, falling back to 1 default profile: "default"
+2023-02-16 16:00:04,925 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls 255 - The Class-Path manifest attribute in C:\Users\june.wu\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/C:/Users/june.wu/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2023-02-16 16:00:04,926 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-16 16:00:04,926 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-16 16:00:06,238 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 108 - Tomcat initialized with port(s): 8080 (http)
+2023-02-16 16:00:06,247 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-16 16:00:06,247 [restartedMain] INFO  o.a.catalina.core.StandardService 173 - Starting service [Tomcat]
+2023-02-16 16:00:06,247 [restartedMain] INFO  o.a.catalina.core.StandardEngine 173 - Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-02-16 16:00:06,341 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring embedded WebApplicationContext
+2023-02-16 16:00:06,341 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext 292 - Root WebApplicationContext: initialization completed in 1415 ms
+2023-02-16 16:00:06,856 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping 57 - Adding welcome page template: index
+2023-02-16 16:00:07,482 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer 59 - LiveReload server is running on port 35729
+2023-02-16 16:00:07,532 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Starting ProtocolHandler ["http-nio-8080"]
+2023-02-16 16:00:07,556 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 220 - Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 16:00:07,611 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-2) is starting
+2023-02-16 16:00:07,616 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:0)
+2023-02-16 16:00:07,617 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-2) started in 64ms (build:19ms init:41ms start:4ms)
+2023-02-16 16:00:07,622 [restartedMain] INFO  c.e.fhir_etl_test.FhirEtlApplication 61 - Started FhirEtlApplication in 3.169 seconds (JVM running for 3.777)
+2023-02-16 16:00:16,730 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 16:00:16,731 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 525 - Initializing Servlet 'dispatcherServlet'
+2023-02-16 16:00:16,732 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 547 - Completed initialization in 1 ms
+2023-02-16 16:02:13,685 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-3) is starting
+2023-02-16 16:02:13,695 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 16:02:13,695 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route1 (timer://foo)
+2023-02-16 16:02:13,695 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-3) started in 90ms (build:2ms init:79ms start:9ms)
+2023-02-16 16:02:14,878 [Camel (camel-3) thread #1 - timer://foo] WARN  c.m.s.jdbc.internals.TDS.Channel 2050 - TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2023-02-16 16:02:18,698 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-3) is shutting down (timeout:45s)
+2023-02-16 16:02:18,703 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 16:02:18,704 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route1 (timer://foo)
+2023-02-16 16:02:18,706 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-3) shutdown in 7ms (uptime:5s)
+2023-02-16 16:02:49,898 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-2) is shutting down (timeout:45s)
+2023-02-16 16:02:49,898 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:0)
+2023-02-16 16:02:49,898 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-2) shutdown in 0ms (uptime:2m42s)
+2023-02-16 16:10:31,072 [restartedMain] INFO  c.e.f.FhirEtlApplication 55 - Starting FhirEtlApplication using Java 17.0.5 on June4693-450G7 with PID 12036 (C:\Users\june.wu\Documents\GitHub\fhir_integration\target\classes started by June.Wu in C:\Users\june.wu\Documents\GitHub\fhir_integration)
+2023-02-16 16:10:31,074 [restartedMain] INFO  c.e.f.FhirEtlApplication 631 - No active profile set, falling back to 1 default profile: "default"
+2023-02-16 16:10:31,132 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls 255 - The Class-Path manifest attribute in C:\Users\june.wu\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/C:/Users/june.wu/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2023-02-16 16:10:31,132 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-16 16:10:31,132 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor 255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-16 16:10:32,684 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 108 - Tomcat initialized with port(s): 8080 (http)
+2023-02-16 16:10:32,697 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-16 16:10:32,697 [restartedMain] INFO  o.a.catalina.core.StandardService 173 - Starting service [Tomcat]
+2023-02-16 16:10:32,699 [restartedMain] INFO  o.a.catalina.core.StandardEngine 173 - Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-02-16 16:10:32,804 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring embedded WebApplicationContext
+2023-02-16 16:10:32,804 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext 292 - Root WebApplicationContext: initialization completed in 1671 ms
+2023-02-16 16:10:33,161 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping 57 - Adding welcome page template: index
+2023-02-16 16:10:33,571 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer 59 - LiveReload server is running on port 35729
+2023-02-16 16:10:33,613 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Starting ProtocolHandler ["http-nio-8080"]
+2023-02-16 16:10:33,637 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer 220 - Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-16 16:10:33,696 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-2) is starting
+2023-02-16 16:10:33,700 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-16 16:10:33,700 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 525 - Initializing Servlet 'dispatcherServlet'
+2023-02-16 16:10:33,701 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 547 - Completed initialization in 1 ms
+2023-02-16 16:10:33,701 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:0)
+2023-02-16 16:10:33,701 [restartedMain] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-2) started in 59ms (build:11ms init:44ms start:4ms)
+2023-02-16 16:10:33,707 [restartedMain] INFO  c.e.f.FhirEtlApplication 61 - Started FhirEtlApplication in 3.144 seconds (JVM running for 3.85)
+2023-02-16 16:10:40,934 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3058 - Apache Camel 3.19.0 (camel-3) is starting
+2023-02-16 16:10:40,942 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3220 - Routes startup (started:1)
+2023-02-16 16:10:40,942 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3225 -     Started route1 (timer://foo)
+2023-02-16 16:10:40,942 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3249 - Apache Camel 3.19.0 (camel-3) started in 91ms (build:3ms init:81ms start:7ms)
+2023-02-16 16:10:45,950 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-3) is shutting down (timeout:45s)
+2023-02-16 16:10:45,956 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:1)
+2023-02-16 16:10:45,956 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 166 -     Stopped route1 (timer://foo)
+2023-02-16 16:10:45,958 [http-nio-8080-exec-5] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-3) shutdown in 7ms (uptime:5s)
+2023-02-16 17:06:14,796 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 3454 - Apache Camel 3.19.0 (camel-2) is shutting down (timeout:45s)
+2023-02-16 17:06:14,796 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 166 - Routes stopped (stopped:0)
+2023-02-16 17:06:14,797 [SpringApplicationShutdownHook] INFO  o.a.c.i.engine.AbstractCamelContext 3593 - Apache Camel 3.19.0 (camel-2) shutdown in 0ms (uptime:55m41s)

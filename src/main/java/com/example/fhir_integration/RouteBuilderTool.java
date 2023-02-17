@@ -6,17 +6,16 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.dataformat.JsonLibrary;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class RouteBuilderTool {
-    private static final Logger log = LoggerFactory.getLogger(Camel.class);
+    // private static final Logger log = LoggerFactory.getLogger(Camel.class);
     JsonNode database = null;
     String useDB = "";
     String useTable = "";
-    String errorMsg = "";
+    ToolErrors errors = new ToolErrors();
+    
     String selectdataFloor = "";
-    boolean hasErrors = false;
+    boolean hasToolErrors = false;
 
     public thisRouteBuilder thisRouteBuilder() {
         thisRouteBuilder b = new thisRouteBuilder();
@@ -44,8 +43,6 @@ public class RouteBuilderTool {
                             "SELECT name, database_id, create_date FROM sys.databases where database_id>4;"))
                     .doTry()
                     .to("jdbc:dbSource")
-                    // .split(body())
-                    // .marshal().json(JsonLibrary.Jackson)
                     .marshal().json(JsonLibrary.Jackson)
                     .process(
                             new Processor() {
@@ -54,21 +51,15 @@ public class RouteBuilderTool {
                                 }
                             })
                     .doCatch(Exception.class)
-                    // .log("error")
-                    // .process(
-                    // new Processor() {
-                    // public void process(Exchange exchange) throws Exception {
-                    // hasErrors = true;
-                    // }
-                    // });
-                    // .setBody(exceptionMessage())
                     .process(
                             new Processor() {
                                 public void process(Exchange exchange) throws Exception {
                                     Exception cause = exchange.getProperty(Exchange.EXCEPTION_CAUGHT, Exception.class);
-                                    System.out.print(cause);
+                                    System.out.print(cause.getMessage());
                                     log.error(cause.getMessage());
-                                    hasErrors = true;
+                                    errors.setLogMsg(cause.getMessage());
+                                    errors.setShowMsg("連線錯誤");
+                                    hasToolErrors = true;
                                 }
                             })
                     .end();
@@ -80,8 +71,6 @@ public class RouteBuilderTool {
                             "use " + useDB + ";SELECT DISTINCT TABLE_NAME AS 'name' FROM INFORMATION_SCHEMA.COLUMNS"))
                     .doTry()
                     .to("jdbc:dbSource")
-                    // .split(body())
-                    // .marshal().json(JsonLibrary.Jackson)
                     .marshal().json(JsonLibrary.Jackson)
                     .process(
                             new Processor() {
@@ -90,11 +79,10 @@ public class RouteBuilderTool {
                                 }
                             })
                     .doCatch(Exception.class)
-                    // .log("error")
                     .process(
                             new Processor() {
                                 public void process(Exchange exchange) throws Exception {
-                                    hasErrors = true;
+                                    hasToolErrors = true;
                                 }
                             });
         }
@@ -107,8 +95,6 @@ public class RouteBuilderTool {
                     .setBody(constant(sqlStr))
                     .doTry()
                     .to("jdbc:dbSource")
-                    // .split(body())
-                    // .marshal().json(JsonLibrary.Jackson)
                     .marshal().json(JsonLibrary.Jackson)
                     .process(
                             new Processor() {
@@ -117,11 +103,10 @@ public class RouteBuilderTool {
                                 }
                             })
                     .doCatch(Exception.class)
-                    // .log("error")
                     .process(
                             new Processor() {
                                 public void process(Exchange exchange) throws Exception {
-                                    hasErrors = true;
+                                    hasToolErrors = true;
                                 }
                             });
         }
@@ -129,17 +114,15 @@ public class RouteBuilderTool {
     }
 
     public JsonNode getDatabases() {
-        // List<String> databases = new ArrayList<String>();
-        // return databases;
         return database;
     }
 
-    public String getErrorMsg() {
-        return errorMsg;
+    public ToolErrors getToolErrors() {
+        return errors;
     }
 
-    public boolean hasErrors() {
-        return hasErrors;
+    public boolean hasToolErrors() {
+        return hasToolErrors;
     }
 
     public void getUseDB(String usedb) {
@@ -152,5 +135,24 @@ public class RouteBuilderTool {
 
     public void getSelectdataFloor(String floor) {
         selectdataFloor = floor;
+    }
+
+    public class ToolErrors{
+        private String logMsg = "";
+        private String showMsg = "";
+        public String getLogMsg(){
+            return logMsg;
+        }
+        public String getShowMsg(){
+            return showMsg;
+        }
+        public void setLogMsg(String msg)
+        {
+            this.logMsg = msg;
+        }
+        public void setShowMsg(String msg)
+        {
+            this.showMsg = msg;
+        }
     }
 }

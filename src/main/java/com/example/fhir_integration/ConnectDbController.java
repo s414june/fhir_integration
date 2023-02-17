@@ -10,17 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.camel.CamelContext;
-import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
-import org.apache.camel.model.dataformat.JsonLibrary;
 import org.apache.camel.support.DefaultRegistry;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
-import org.apache.camel.Exchange;
-import org.apache.camel.Processor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -67,8 +62,9 @@ public class ConnectDbController extends HttpServlet {
             context.close();
             data = buildtool.getDatabases();
             // data = new ObjectMapper().readTree(database);
-            if (buildtool.hasErrors()) {
-                return ResponseEntity.badRequest().body("連線錯誤");
+            if (buildtool.hasToolErrors()) {
+                RouteBuilderTool.ToolErrors toolerrors = buildtool.getToolErrors();
+                return ResponseEntity.badRequest().body(toolerrors);
             }
             // 若連線成功，將連線資訊存進session
             setupDataSource.setSession(dataObj, session);
@@ -84,50 +80,4 @@ public class ConnectDbController extends HttpServlet {
 
         return ResponseEntity.ok(data.toString());
     }
-
-    class MyRouteBuilder extends RouteBuilder {
-        JsonNode database = null;
-        String errorMsg = "";
-        boolean hasErrors = false;
-
-        public void configure() throws Exception {
-            from("timer://foo?repeatCount=1")
-                    .setBody(constant(
-                            "SELECT name, database_id, create_date FROM sys.databases where database_id>4;"))
-                    .doTry()
-                    .to("jdbc:dbSource")
-                    // .split(body())
-                    // .marshal().json(JsonLibrary.Jackson)
-                    .marshal().json(JsonLibrary.Jackson)
-                    .process(
-                            new Processor() {
-                                public void process(Exchange exchange) throws Exception {
-                                    database = exchange.getIn().getBody(JsonNode.class);
-                                }
-                            })
-                    .doCatch(Exception.class)
-                    // .log("error")
-                    .process(
-                            new Processor() {
-                                public void process(Exchange exchange) throws Exception {
-                                    hasErrors = true;
-                                }
-                            });
-        }
-
-        public JsonNode getDatabases() {
-            // List<String> databases = new ArrayList<String>();
-            // return databases;
-            return database;
-        }
-
-        public String getErrorMsg() {
-            return errorMsg;
-        }
-
-        public boolean hasErrors() {
-            return hasErrors;
-        }
-    }
-
 }
